@@ -16,21 +16,7 @@ Website bán vé xem phim trực tuyến, cho phép người dùng đăng nhập
 - **Đăng Nhập:** Đăng nhập người dùng, Số điện thoại, Mật khẩu
 - **Chi Tiết Giao Dịch:** Tải ảnh xuống, Trở lại
 
-## Cài Đặt
-1. **Clone dự án:**
-    ```sh
-    git clone https://github.com/yourusername/movie-ticket-booking.git
-    ```
-2. **Cài đặt:**
-    ```sh
-    cd movie-ticket-booking
-    npm install
-    ```
-3. **Chạy dự án:**
-    ```sh
-    npm start
-    ```
-4. **Truy cập:** `http://localhost:3000`
+
 
 ## Công Nghệ
 - Frontend: React.js
@@ -39,8 +25,4 @@ Website bán vé xem phim trực tuyến, cho phép người dùng đăng nhập
 - Authentication: JWT
 - Thanh toán: Stripe API
 
-## Đóng Góp
-Tạo Pull Request với mô tả chi tiết về các thay đổi của bạn.
 
-## Giấy Phép
-Dự án này được cấp phép theo giấy phép MIT. Xem tệp [LICENSE](LICENSE) để biết thêm chi tiết.
