@@ -21,8 +21,5 @@ Website bán vé xem phim trực tuyến, cho phép người dùng đăng nhập
 ## Công Nghệ
 - Frontend: React.js
 - Backend: Node.js, Express.js
-- Cơ sở dữ liệu: MongoDB
-- Authentication: JWT
-- Thanh toán: Stripe API
 
 
