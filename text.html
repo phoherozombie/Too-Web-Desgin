@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-areas: 
+                'large1 small3 large2'
+                'medium1 small2 medium2'
+                'small1 medium3 large3';
+            
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .large {
+            grid-area: large1, large2, large3;
+            background-color: #4CAF50;
+            height: 100px;
+        }
+
+        .medium {
+            grid-area: medium1, medium2, medium3;
+            background-color: #2196F3;
+            height: 70px;
+        }
+
+        .small {
+            grid-area: small1, small2, small3;
+            background-color: #f44336;
+            height: 50px;
+        }
+
+        .large1 { grid-area: large1; }
+        .large2 { grid-area: large2; }
+        .large3 { grid-area: large3; }
+
+        .medium1 { grid-area: medium1; }
+        .medium2 { grid-area: medium2; }
+        .medium3 { grid-area: medium3; }
+
+        .small1 { grid-area: small1; }
+        .small2 { grid-area: small2; }
+        .small3 { grid-area: small3; }
+
+        /* Adjusting spacing between numbers */
+        .grid-container > div {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="large large1">1</div>
+        <div class="small small3">3</div>
+        <div class="large large2">1</div>
+        <div class="medium medium1">2</div>
+        <div class="small small2">3</div>
+        
+        <div class="medium medium2">2</div>
+        <div class="small small1">3</div>
+        <div class="medium medium3">2</div>
+        
+        
+        <div class="large large3">1</div>
+        
+    </div>
+</body>
+</html>
