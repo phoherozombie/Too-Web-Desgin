@@ -19,7 +19,7 @@ Website bán vé xem phim trực tuyến, cho phép người dùng đăng nhập
 
 
 ## Công Nghệ
-- Frontend: React.js
+- Frontend: HTML, CSS, Javascript và Tailwind
 - Backend: Node.js, Express.js
 
 
