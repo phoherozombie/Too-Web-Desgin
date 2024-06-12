@@ -1,7 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  font-family: Arial, sans-serif;
+}
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 1296px;
+  position: relative;
+  margin: 20px auto;
+  height: 495px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 
+}
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.card {
+  min-width: 300px;
+  margin-right: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card img {
+  width: 100%;
+}
+.card h3 {
+  margin: 15px;
+}
+.card p {
+  margin: 0 15px 15px;
+}
+.buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+.buttons button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .section_30 {
   padding: 30px 0;
 }
@@ -152,6 +206,7 @@ a{
       width: calc(100% - 20px);
   }
 }
+
 .header {
   justify-content: space-between;
   align-items: center;
@@ -252,8 +307,7 @@ a{
   align-self: start;
 }
  .container {
-  background-color: #f7df08;
-
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -468,8 +522,6 @@ a{
     max-width: 1368px;
     gap: 0px;
     padding: 0 20px;
-    position: relative;
-    left: 80px;
   }
   .img-logo{
     
@@ -741,10 +793,6 @@ a{
     text-align: right;
     align-self: start;
     font: 500 24px/133% Roboto, sans-serif;
-    position: relative;
-    top:35px;
-    right: 20px;
-    
   }
 
   .content-section-main {
@@ -1502,66 +1550,6 @@ a{
   .logout-btn {
     white-space: initial;
   }
-}
-
-.carousel {
-    display: flex;
-    overflow: hidden;
-    width: 1296px;
-    position: relative;
-    margin: 20px auto;
-    height: 495px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    
-
-}
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-.card {
-    min-width: 300px;
-    margin-right: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
-
-}
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-.card img {
-    width: 100%;
-}
-.card h3 {
-    margin: 15px;
-}
-.card p {
-    margin: 0 15px 15px;
-}
-.buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-.buttons button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-}
-.buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 

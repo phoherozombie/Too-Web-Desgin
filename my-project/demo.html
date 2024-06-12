@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim Sắp Chiếu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 1020px; /* Tăng chiều rộng để chứa các card lớn hơn */
+            position: relative;
+            margin: 20px auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .card {
+            min-width: 320px; /* Tăng chiều rộng của card */
+            margin-right: 20px; /* Tăng khoảng cách giữa các card */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px; /* Tăng độ bo góc */
+            overflow: hidden;
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s, perspective 1000px;
+            position: relative;
+            z-index: 1;
+        }
+        .card:hover {
+            transform: scale(1.1) rotateY(10deg); /* Thêm hiệu ứng nghiêng khi di chuột vào */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        .card img {
+            width: 100%;
+            border-bottom: 2px solid #ddd;
+        }
+        .card h3 {
+            margin: 15px;
+            font-size: 1.2em;
+        }
+        .card p {
+            margin: 0 15px 15px;
+            font-size: 1em;
+        }
+        .buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px; /* Tăng kích thước nút */
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+            font-size: 1.2em; /* Tăng kích thước chữ trên nút */
+        }
+        .buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="card">
+            <img src="https://via.placeholder.com/320x450?text=Phim+1" alt="Phim 1">
+            <h3>Phim 1</h3>
+            <p>Mô tả phim 1</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/320x450?text=Phim+2" alt="Phim 2">
+            <h3>Phim 2</h3>
+            <p>Mô tả phim 2</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/320x450?text=Phim+3" alt="Phim 3">
+            <h3>Phim 3</h3>
+            <p>Mô tả phim 3</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/320x450?text=Phim+4" alt="Phim 4">
+            <h3>Phim 4</h3>
+            <p>Mô tả phim 4</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/320x450?text=Phim+5" alt="Phim 5">
+            <h3>Phim 5</h3>
+            <p>Mô tả phim 5</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/320x450?text=Phim+6" alt="Phim 6">
+            <h3>Phim 6</h3>
+            <p>Mô tả phim 6</p>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="prevBtn">❮</button>
+        <button id="nextBtn">❯</button>
+    </div>
+</div>
+
+<script>
+    // Chọn các phần tử cần thiết
+    const carouselInner = document.querySelector('.carousel-inner');
+    const cards = document.querySelectorAll('.card');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Khởi tạo chỉ số hiện tại và số lượng card hiển thị mỗi lần
+    let currentIndex = 0;
+    const cardsPerView = 3;
+
+    // Hàm cập nhật vị trí carousel
+    function updateCarousel() {
+        const width = cards[0].clientWidth; // Lấy chiều rộng của một card
+        const margin = parseInt(window.getComputedStyle(cards[0]).marginRight); // Lấy khoảng cách giữa các card
+        carouselInner.style.transform = `translateX(${-currentIndex * (width + margin)}px)`; // Dịch chuyển carousel
+    }
+
+    // Sự kiện khi nhấn nút "next"
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < cards.length - cardsPerView) { // Kiểm tra nếu không phải là cuối cùng
+            currentIndex++; // Tăng chỉ số
+            updateCarousel(); // Cập nhật carousel
+        }
+    });
+
+    // Sự kiện khi nhấn nút "prev"
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) { // Kiểm tra nếu không phải là đầu tiên
+            currentIndex--; // Giảm chỉ số
+            updateCarousel(); // Cập nhật carousel
+        }
+    });
+
+    // Cập nhật carousel khi kích thước cửa sổ thay đổi
+    window.addEventListener('resize', updateCarousel);
+</script>
+
+</body>
+</html>
