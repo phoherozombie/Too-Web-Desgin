@@ -108,7 +108,8 @@
 
   }
 .container {
-    background-color: #fff;
+  background-color: #f7df08;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1070,6 +1071,13 @@ padding: 12px 8px;
     height: 50px;
     margin-bottom: 20px;
     border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    border-bottom-right-radius: 70px ;
+    border-bottom-left-radius: 70px ;
 }
 .row {
     display: flex;
@@ -1088,6 +1096,11 @@ padding: 12px 8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-duration: 0.4s;
+}
+.seat:hover {
+  background-color: #999e9a;
+  transform: scale(1.5);
 }
 
 #selected-seats-container {
@@ -1107,11 +1120,16 @@ padding: 12px 8px;
     font-size: 1.2em;
 }
 #screenHere{
-    background-color: #6feaf6 ;
+    border-radius: 15px;
+    background-color: #f66f6f ;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     
     
+    
+}
+.exitIcon{
+  border-radius: 15px;
 }
 .total-container {
     display: flex;
@@ -1233,6 +1251,9 @@ padding: 12px 8px;
     font-size: 24px;
     font-weight: 500;
     line-height: 133%;
+    border-radius: 30px;
+    position: relative;
+    bottom: 5px;
   }
 
   @media (max-width: 991px) {
@@ -1503,5 +1524,8 @@ padding: 12px 8px;
     .logout-btn {
       white-space: initial;
     }
+  }
+  #filledSeat{
+    background-color: var(--Royal-Blue, #1a2c50);
   }
   
