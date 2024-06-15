@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="updated_style (1).css">
   </head>
   <body>
     <div class="container">
@@ -541,11 +541,16 @@
                  
                 
                   <a href="schedule.html"><img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/POSTER/mong-vuot.jpg"></a>
-                  alt="Phim 1" >
+                  
                   <h3 class="amy-movie-field-title"><a
                     href="/film/mong-vuot-t16/68e43530-e3f6-40b3-9df7-04643a9afeae.html">M&#211;NG VUỐT
                     (T16)</a></h3>
                   <p>Mô tả phim 1</p>
+                  <button class="view-more">Buy Ticket</button>
+                  
+                  
+
+
               </div>
               <div class="card">
                 <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/peenak4.jpg"
@@ -554,6 +559,7 @@
                   href="/film/ngoi-den-ky-quai-4-t16/3a5f74a3-28fa-4798-8b05-401ebc25b245.html">NG&#212;I
                   ĐỀN KỲ QU&#193;I 4 (T16)</a></h3>
                   <p>Mô tả phim 2</p>
+                  <button class="view-more">Buy Ticket</button>
               </div>
               <div class="card">
                 <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/garfied.jpg"
@@ -562,6 +568,7 @@
                   href="/film/meo-beo-sieu-quay-k-long-tieng/f9d10145-6be1-4b37-bdb5-183446e93640.html">M&#200;O
                   B&#201;O SI&#202;U QUẬY (K) </a></h3>
                   <p>Mô tả phim 3</p>
+                  <button class="view-more">Buy Ticket</button>
               </div>
               <div class="card">
                 <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/doraemon2024.jpg"
@@ -569,6 +576,7 @@
                 <h3 class="amy-movie-field-title"><a
                   href="/film/long-tieng-phim-dien-anh-doraemon-nobita-va-ban-giao-huong-dia-cau-p/da3501c2-c08a-4622-80e0-d393294c4608.html">BẢN GIAO HƯỞNG ĐỊA CẦU</a></h3>
                   <p>Mô tả phim 4</p>
+                  <button class="view-more">Buy Ticket</button>
               </div>
               <div class="card">
                 <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/POSTER/lat-mat-7.jpg"
@@ -577,6 +585,7 @@
                   href="/film/lat-mat-7-mot-dieu-uoc-k/89ec4452-24cc-4a64-9441-fe04722df7fb.html">LẬT MẶT
                   7 MỘT ĐIỀU ƯỚC</a></h3>
                   <p>Mô tả phim 5</p>
+                  <button class="view-more">Buy Ticket</button>
               </div>
               <div class="card">
                 <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/POSTER/gia-tai-cua-ngoai.jpg"
@@ -585,6 +594,7 @@
                     href="/film/pd-gia-tai-cua-ngoai-t13/2c8695d0-e1df-4c87-bd6a-daaadaf9b774.html">(PĐ) -
                     GIA T&#192;I CỦA NGOẠI</a></h3>
                   <p>Mô tả phim 6</p>
+                  <button class="view-more">Buy Ticket</button>
               </div>
           </div>
           <div class="buttons">
@@ -592,6 +602,7 @@
               <button id="nextBtn">❯</button>
           </div>
       </section>
+      
     
       <!-- <section class="section">
         <div class="news-info">
@@ -603,59 +614,65 @@
       <section>
       <div class="news-section">
         <div class="news-info">
-          <h2 class="section-title">Coming soon</h2>
-          <p class="section-description">Wait for its arrival at your favorite cinema!</p>
+          <h2 class="section-title">Trailer Film</h2>
+          <p class="section-description">Check out the new movies you like below!</p>
         </div>
         <a href="ComingSoon.html" class="view-all">See All</a>
       </div>
       <div class="carousel">
         <div class="carousel-inner">
-            <div class="card">
+            <div class="card" onclick="showVideo()">
                 <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/POSTER/mong-vuot.jpg"
                 alt="Phim 1" >
                 <h3 class="amy-movie-field-title"><a
                   href="/film/mong-vuot-t16/68e43530-e3f6-40b3-9df7-04643a9afeae.html">M&#211;NG VUỐT
                   (T16)</a></h3>
                 <p>Mô tả phim 1</p>
+                <button class="view-more trailer">&#9654;</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="showVideo()"  >
               <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/peenak4.jpg"
               alt="Phim 1" >
               <h3 class="amy-movie-field-title"><a
                 href="/film/ngoi-den-ky-quai-4-t16/3a5f74a3-28fa-4798-8b05-401ebc25b245.html">NG&#212;I
                 ĐỀN KỲ QU&#193;I 4 (T16)</a></h3>
                 <p>Mô tả phim 2</p>
+                <button class="view-more trailer">&#9654;</button>
             </div>
-            <div class="card">
+            <div  class="card" onclick="showVideo()">
               <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/garfied.jpg"
               alt="Phim 1" >
               <h3 class="amy-movie-field-title"><a
                 href="/film/meo-beo-sieu-quay-k-long-tieng/f9d10145-6be1-4b37-bdb5-183446e93640.html">M&#200;O
                 B&#201;O SI&#202;U QUẬY (K) </a></h3>
                 <p>Mô tả phim 3</p>
+                <button class="view-more trailer">&#9654;</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="showVideo()">
               <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/doraemon2024.jpg"
               alt="Phim 1" >
               <h3 class="amy-movie-field-title"><a
                 href="/film/long-tieng-phim-dien-anh-doraemon-nobita-va-ban-giao-huong-dia-cau-p/da3501c2-c08a-4622-80e0-d393294c4608.html">BẢN GIAO HƯỞNG ĐỊA CẦU</a></h3>
                 <p>Mô tả phim 4</p>
+                <button class="view-more trailer">&#9654;</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="showVideo()">
               <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/POSTER/lat-mat-7.jpg"
               alt="Phim 1" >
               <h3 class="amy-movie-field-title"><a
                 href="/film/lat-mat-7-mot-dieu-uoc-k/89ec4452-24cc-4a64-9441-fe04722df7fb.html">LẬT MẶT
                 7 MỘT ĐIỀU ƯỚC</a></h3>
                 <p>Mô tả phim 5</p>
+                <button class="view-more trailer">&#9654;</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="showVideo()">
               <img height="400" width="300" src="https://starlight.vn/Areas/Admin/Content/Fileuploads/images/POSTER/gia-tai-cua-ngoai.jpg"
                 alt="Phim 1" >
                 <h3 class="amy-movie-field-title"><a
                   href="/film/pd-gia-tai-cua-ngoai-t13/2c8695d0-e1df-4c87-bd6a-daaadaf9b774.html">(PĐ) -
                   GIA T&#192;I CỦA NGOẠI</a></h3>
                 <p>Mô tả phim 6</p>
+                <button class="view-more trailer">&#9654;</button>
             </div>
         </div>
         <div class="buttons">
@@ -665,6 +682,10 @@
     
      
     </section>
+    <div id="video-container">
+      <button id="close-btn" onclick="closeVideo()">Close</button>
+      <iframe id="video-iframe" width="1000" height="600" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     
       <footer class="info-footer">
         <div class="divider"></div>
@@ -820,7 +841,37 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', updateCarousel);
 
 
-   
+    document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        card.appendChild(ripple);
+    });
+
+    card.addEventListener('mouseleave', () => {
+        const ripple = card.querySelector('.ripple');
+        if (ripple) {
+            ripple.remove();
+        }
+    });
+});
+
+
+let videoContainer = document.getElementById("video-container");
+let videoIframe = document.getElementById("video-iframe");
+
+function showVideo() {
+  videoContainer.style.display = "block";
+  // Simulate loading the video
+  setTimeout(function() {
+    videoIframe.src = "https://www.youtube.com/embed/JfVOs4VSpmA?si=jj6t46MFPwFrC4eK" ;
+  }, 500);
+}
+
+function closeVideo() {
+  videoContainer.style.display = "none";
+  videoIframe.src = "";
+}
     </script>
   </body>
 </html>

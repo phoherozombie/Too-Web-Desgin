@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            background-color: #f7df08;
+            display: flex;
+            padding-top: 16px;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            
+    justify-content: space-between;
+    position: relative;
+    bottom: 16px;
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    font-size: 18px;
+    color: var(--Shade-900, #333);
+    font-weight: 500;
+    padding: 8px 72px 0 26px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+  }
+  .header {
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    font-size: 18px;
+    color: var(--Shade-900, #333);
+    font-weight: 500;
+    padding: 8px 72px 0 26px;
+  }
+
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+  }
+
+  .logo {
+    aspect-ratio: 0.98;
+    object-fit: auto;
+    object-position: center;
+    width: 83px;
+  }
+  .logo {
+    aspect-ratio: 0.98;
+    object-fit: auto;
+    object-position: center;
+    width: 83px;
+    align-self: start;
+  }
+  .nav-menu {
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    gap: 30px;
+    margin: auto 0;
+  }
+  
+  @media (max-width: 991px) {
+    .nav-menu {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+  
+  .nav-menu {
+    justify-content: end;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    margin: auto 0;
+    
+  }
+
+  @media (max-width: 991px) {
+    .nav-menu {
+      flex-wrap: wrap;
+    }
+  }
+  
+.nav-item-home {
+    color: var(--royal-blue-while-pressed, #383782);
+  }
+  .nav-item {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    margin: auto 0;
+  }
+
+  .nav-item-home {
+    color: var(--royal-blue-while-pressed, #383782);
+  }
+  .nav-item {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    margin: auto 0;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* Xóa đường gạch chân */
+  }
+  
+  .nav-item-home {
+    color: var(--royal-blue-while-pressed, #383782);
+  }
+  
+  .nav-item:hover {
+    background-color: var(--royal-blue-while-pressed, #383782);
+    color: #fff;
+    border-radius: 5px;
+  }
+  .vertical-divider {
+    background-color: var(--Shade-400, #9da8be);
+    width: 2px;
+    height: 24px;
+    margin: auto 0;
+  }
+  .vertical-divider {
+    background-color: var(--Shade-400, #9da8be);
+    width: 2px;
+    height: 24px;
+    margin: auto 0;
+  }
+
+  .profile-image {
+    aspect-ratio: 1;
+    object-fit: auto;
+    object-position: center;
+    width: 32px;
+    margin: auto 0;
+  }
+  .profile-name {
+    font-family: Roboto, sans-serif;
+    margin: auto 0;
+    font-weight: 600;
+  }
+  
+  .profile-name {
+    font-family: Roboto, sans-serif;
+    margin: auto 0;
+  }
+  .logout-btn:hover {
+    background-color: #14203b;
+  }
+  
+  @media (max-width: 991px) {
+    .logout-btn {
+      white-space: initial;
+    }
+  }
+  .logout-btn {
+    font-family: Roboto, sans-serif;
+    border-radius: 5px;
+    background-color: var(--Royal-Blue, #1a2c50);
+    color: var(--Pastel-Yellow, #f2c46f);
+    text-align: center;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .logout-btn {
+    font-family: Roboto, sans-serif;
+    border-radius: 5.067px;
+    background-color: var(--Royal-Blue, #1a2c50);
+    color: var(--Pastel-Yellow, #f2c46f);
+    text-align: center;
+    padding: 12px 8px;
+  }
+
+  @media (max-width: 991px) {
+    .logout-btn {
+      white-space: initial;
+    }
+  }
+  
+
+
+
+  .containerSuceess {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .icon {
+            font-size: 4em;
+            color: #4CAF50;
+            animation: bounceIn 1s ease-in-out;
+        }
+        .success-message {
+            font-size: 2em;
+            margin-bottom: 10px;
+            animation: bounceIn 1s ease-in-out;
+        }
+        .description {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .button {
+            background: #ff0080;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            animation: pulse 1.5s infinite;
+        }
+        .button:hover {
+            background: #ff66b2;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(0.9, 0.9, 0.9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(0.97, 0.97, 0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .info-footer {
+    background-color: var(--White, #fff);
+    align-self: stretch;
+    display: flex;
+    margin-top: 128px;
+    width: 100%;
+    padding-bottom: 68px;
+    flex-direction: column;
+  }
+
+  @media (max-width: 991px) {
+    .info-footer {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  .info-footer {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .divider {
+    background-color: #ddd;
+    height: 1px;
+    margin: 20px 0;
+  }
+  .vertical-divider {
+    background-color: var(--Shade-400, #9da8be);
+    width: 2px;
+    height: 24px;
+    margin: auto 0;
+  }
+  .divider {
+    background-color: var(--Shade-300, #bdc5d4);
+    min-height: 1px;
+    width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .divider {
+      max-width: 100%;
+    }
+  }
+  .footer-content {
+    align-self: center;
+    display: flex;
+    margin-top: 38px;
+    width: 100%;
+    max-width: 1161px;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 991px) {
+    .footer-content {
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .footer-column {
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+
+  @media (max-width: 991px) {
+    .footer-column {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .footer-column {
+        max-width: 100%;
+    }
+  }
+  .footer-column {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+  }
+
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 31%;
+  }
+  .social-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .social-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .social-title {
+    color: var(--Shade-900, #333);
+    font: 500 18px Roboto, sans-serif;
+  }
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }
+  .social-icon {
+    aspect-ratio: 1;
+    object-fit: auto;
+    object-position: center;
+    width: 24px;
+  }
+  .social-icons {
+    display: flex;
+    margin-top: 24px;
+    padding-right: 80px;
+    gap: 18px;
+  }
+
+  @media (max-width: 991px) {
+    .social-icons {
+      padding-right: 20px;
+    }
+  }
+
+  .app-section {
+    display: flex;
+    margin-top: 42px;
+    flex-direction: column;
+  }
+
+  @media (max-width: 991px) {
+    .app-section {
+      margin-top: 40px;
+    }
+  }
+  .app-title {
+    color: var(--Shade-900, #333);
+    font: 500 18px Roboto, sans-serif;
+  }
+  .app-links img {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+  }
+  .app-links {
+    display: flex;
+    margin-top: 24px;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  .app-link {
+    aspect-ratio: 3.33;
+    object-fit: auto;
+    object-position: center;
+    width: 110px;
+    max-width: 100%;
+  }
+  .footer-note {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+  }
+  .footer-note {
+    color: var(--Shade-900, #333);
+    margin-top: 38px;
+    font: 400 12px Roboto, sans-serif;
+  }
+
+
+  
+
+
+  @media (max-width: 991px) {
+    .footer-item {
+      width: 100%;
+    }
+  }
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    color: var(--Shade-900, #333);
+    text-align: center;
+  }
+
+  @media (max-width: 991px) {
+    .footer-info {
+      margin-top: 40px;
+    }
+  }
+  .footer-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .footer-title {
+    font: 500 18px Roboto, sans-serif;
+  }
+
+  .footer-list {
+    display: flex;
+    margin-top: 24px;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .list-item {
+    font-family: Roboto, sans-serif;
+    justify-content: center;
+  }
+
+  .list-item:not(:first-of-type) {
+    margin-top: 18px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 991px) {
+    .list-item:not(:first-of-type) {
+      white-space: initial;
+    }
+  }
+  .list-item {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #666;
+  }
+  .footer-items {
+    gap: 20px;
+    display: flex;
+  }
+
+  @media (max-width: 991px) {
+    .footer-items {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+
+
+    </style>
+
+    <section class="container">
+        <header class="header">
+            <img id="img-logo" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/848384e8253752a1dc03b823c337505f21228e46c1847bd76567f72946482aac?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" alt="Logo" class="logo" />
+            <nav class="nav-menu">
+              <a href="index.html" class="nav-item nav-item-home">Home</a>
+              <a href="myTicket.html" class="nav-item">My Tickets</a>
+              <a href="News.html" class="nav-item">Too News</a>
+              <div class="vertical-divider"></div>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a3ca842d4cd4de61297eebe8f08acb763755b34885f1a9221275a7018273ae5?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" alt="Profile Picture" class="profile-image" />
+              <span class="profile-name">Hoang Phuc</span>
+              <button class="logout-btn" tabindex="0">Logout</button>
+            </nav>
+          </header>
+          
+        <main>
+            <div class="containerSuceess">
+                <div class="icon">&#10004;</div> <!-- Green tick icon -->
+                <div class="success-message">
+                    Payment Successful!
+                </div>
+                <div class="description">
+                    Your payment has been processed successfully. You can view your ticket by clicking the button below.
+                </div>
+                <button class="button" onclick="window.location.href='myTicket.html'">My Ticket</button>
+            </div>
+        </main>
+
+        <footer class="info-footer">
+            <div class="divider"></div>
+            <div class="footer-content">
+              <div class="footer-column">
+                <div class="footer-items">
+                  <div class="footer-item">
+                    <div class="footer-info">
+                      <h2 class="footer-title">Company</h2>
+                      <div class="footer-list">
+                        <p class="list-item">Contact us</p>
+                        <p class="list-item">About</p>
+                        <p class="list-item">Partner</p>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="footer-item">
+                    <div class="footer-info">
+                      <h2 class="footer-title">About</h2>
+                      <div class="footer-list">
+                        <p class="list-item">Too News</p>
+                        <p class="list-item">Cinema</p>
+                        <p class="list-item">My Ticket</p>
+                        <p class="list-item">Payment</p>
+                        <p class="list-item">Instalment</p>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="footer-item">
+                    <div class="footer-info">
+                      <h2 class="footer-title">Support</h2>
+                      <div class="footer-list">
+                        <p class="list-item">Help Center</p>
+                        <p class="list-item">Privacy Policy</p>
+                        <p class="list-item">FAQ</p>
+                        <p class="list-item">Terms and Conditions</p>
+                        <p class="list-item">Update Covid-19</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-column">
+                <section class="social-section">
+                  <div class="social-content">
+                    <h2 class="social-title">Follow Social Media</h2>
+                    <div class="social-icons">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b8fa93cc29d50df9760b627d48135a7dbadd49b8b1e585d1e8eed284fa0e1cc?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e8620ff9de9fbf7819b69526474a6f1f65380ea433d6b886495490641c02d04a?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/24a966dd74f3fe546af8ace34e38507b34e6a2648b933814d50a9cd72800ffb4?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
+                    </div>
+                  </div>
+                  <div class="app-section">
+                    <div class="social-content">
+                      <h2 class="app-title">Download Too Application</h2>
+                      <div class="app-links">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8708d9c51565c9f862ab41f4083d6f99d94dad78cf9f5e81f4c79f75610dbb0c?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="app-link" />
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2b5dbedf9db16aee77498efe1dd3b9cb5c1b57435369cf45520ed4d75e82b82?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="app-link" />
+                      </div>
+                      <p class="footer-note">2024 Too - PT Hoang Phuc and Van Kiet.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </footer>
+    </section>
+</body>
+
+</html>
