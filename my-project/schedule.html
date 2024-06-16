@@ -9,19 +9,38 @@
 <body>
 
 
-<section class="container">
-  <header class="header">
-    <img id="img-logo" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/848384e8253752a1dc03b823c337505f21228e46c1847bd76567f72946482aac?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" alt="Logo" class="logo" />
-    <nav class="nav-menu">
-      <a href="index.html" class="nav-item nav-item-home">Home</a>
-      <a href="myTicket.html" class="nav-item">My Tickets</a>
-      <a href="News.html" class="nav-item">Too News</a>
-      <div class="vertical-divider"></div>
-      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a3ca842d4cd4de61297eebe8f08acb763755b34885f1a9221275a7018273ae5?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" alt="Profile Picture" class="profile-image" />
-      <span class="profile-name">Hoang Phuc</span>
-      <button class="logout-btn" tabindex="0">Logout</button>
-    </nav>
-  </header>
+  <header>
+    <div class ="logo">
+        <h1 class = "logo-text"> <span> Too</span></h1>
+    </div>    
+    <i class="fa fa-bars menu-toggle"></i>
+    <ul class="nav">
+        <li>
+            <a href="index.html"> Home</a>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </li>
+        <li><a href="#"> News</a></li>
+        <li><a href="myTicket.html">Ticket</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <!-- <li><a href="#"> Sign Up</a></li>
+        <li><a href="#"> Login</a></li> -->
+        <li>
+            <a href="#">
+                <i class="fa fa-user"></i>
+                Hoang Phuc
+                <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+            </a>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="login.html" class="logout">Logout</a></li>
+            </ul>
+        </li>
+        
+     </ul>
+    </header>
  
     <div class="content-wrapper">
         <h1 class="schedule-title">SCHEDULE</h1>
@@ -135,75 +154,56 @@
             </div>
         </div>
     </div>
-    <footer class="info-footer">
-        <div class="divider"></div>
-        <div class="footer-content">
-          <div class="footer-column">
-            <div class="footer-items">
-              <div class="footer-item">
-                <div class="footer-info">
-                  <h2 class="footer-title">Company</h2>
-                  <div class="footer-list">
-                    <p class="list-item">Contact us</p>
-                    <p class="list-item">About</p>
-                    <p class="list-item">Partner</p>
-                  </div>
-                </div>
+    <div class="footer">
+      <div class="footer-content">
+          <div class="footer-section about">
+              <h1 class ="logo-text"> <span>Too</span></h1>
+              <p> 
+                  Too is a ticket booking website where you can find the best price tickets for your favorite movie.
+              </p>
+              <div class="contact">
+                  <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
+                  <span><i class="fas fa-envelope"></i> &nbsp; too@hotline.com</span>
               </div>
-    
-              <div class="footer-item">
-                <div class="footer-info">
-                  <h2 class="footer-title">About</h2>
-                  <div class="footer-list">
-                    <p class="list-item">Too News</p>
-                    <p class="list-item">Cinema</p>
-                    <p class="list-item">My Ticket</p>
-                    <p class="list-item">Payment</p>
-                    <p class="list-item">Instalment</p>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="footer-item">
-                <div class="footer-info">
-                  <h2 class="footer-title">Support</h2>
-                  <div class="footer-list">
-                    <p class="list-item">Help Center</p>
-                    <p class="list-item">Privacy Policy</p>
-                    <p class="list-item">FAQ</p>
-                    <p class="list-item">Terms and Conditions</p>
-                    <p class="list-item">Update Covid-19</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-column">
-            <section class="social-section">
-              <div class="social-content">
-                <h2 class="social-title">Follow Social Media</h2>
-                <div class="social-icons">
-                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b8fa93cc29d50df9760b627d48135a7dbadd49b8b1e585d1e8eed284fa0e1cc?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e8620ff9de9fbf7819b69526474a6f1f65380ea433d6b886495490641c02d04a?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/24a966dd74f3fe546af8ace34e38507b34e6a2648b933814d50a9cd72800ffb4?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                </div>
-              </div>
-              <div class="app-section">
-                <div class="social-content">
-                  <h2 class="app-title">Download Too Application</h2>
-                  <div class="app-links">
-                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8708d9c51565c9f862ab41f4083d6f99d94dad78cf9f5e81f4c79f75610dbb0c?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="app-link" />
-                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2b5dbedf9db16aee77498efe1dd3b9cb5c1b57435369cf45520ed4d75e82b82?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="app-link" />
-                  </div>
-                  <p class="footer-note">2024 Too - PT Hoang Phuc and Van Kiet.</p>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </footer>
 
-</section>
+              <div class ="socials"> 
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+          </div>
+          <div class="footer-section links">
+              <h2>Quick links</h2>
+              <br>
+              <ul> 
+                  <a href="#""><li>Events</li></a>
+                  <a href="#""><li>Team</li></a>
+                  <a href="#""><li>Mentores</li></a>
+                  <a href="#""><li>Gallery</li></a>
+                  <a href="#""><li>Terms and Condition</li></a>
+              </ul>
+          </div>
+          <div class="footer-section contact-form">
+              <h2>Contact us</h2>
+              <br>
+              <form action="index.html" method="post">
+                  <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                  <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                  <button type="submit" class="btn btn-big contact-btn">
+                      <i class="fas fa-envelope"></i>
+                      Send
+              </form>
+          </div>
+      </div>
+
+      <div class="footer-bottom">
+          &copy; too.com | Designed by Kiet
+      </div>
+  </div>    
+
+
+
 <script>
    const dateItems = document.querySelectorAll('.date-item');
    let bookDate=document.getElementById("booking-date")
@@ -241,6 +241,12 @@ buyNowButton.addEventListener("click",function(){
     window.location.href="seats.html"
 
 })
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav').classList.toggle('showing');
+        document.querySelector('.nav ul').classList.toggle('showing');
+    });
+});
 
 
 

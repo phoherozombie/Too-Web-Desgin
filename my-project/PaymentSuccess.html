@@ -9,203 +9,15 @@
 
 <body>
     <style>
-        .container {
-            background-color: #f7df08;
-            display: flex;
-            padding-top: 16px;
-            flex-direction: column;
-            align-items: center;
-        }
-        .header {
-            
-    justify-content: space-between;
-    position: relative;
-    bottom: 16px;
-    background-color: #fff;
-    display: flex;
-    width: 100%;
-    gap: 40px;
-    font-size: 18px;
-    color: var(--Shade-900, #333);
-    font-weight: 500;
-    padding: 8px 72px 0 26px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
-  }
-  
-  @media (max-width: 991px) {
-    .header {
-      max-width: 100%;
-      flex-wrap: wrap;
-      padding: 0 20px;
-    }
-  }
-  .header {
-    justify-content: space-around;
-    align-items: flex-start;
-    background-color: #fff;
-    display: flex;
-    width: 100%;
-    gap: 40px;
-    font-size: 18px;
-    color: var(--Shade-900, #333);
-    font-weight: 500;
-    padding: 8px 72px 0 26px;
-  }
-
-  @media (max-width: 991px) {
-    .header {
-      max-width: 100%;
-      flex-wrap: wrap;
-      padding: 0 20px;
-    }
-  }
-
-  .logo {
-    aspect-ratio: 0.98;
-    object-fit: auto;
-    object-position: center;
-    width: 83px;
-  }
-  .logo {
-    aspect-ratio: 0.98;
-    object-fit: auto;
-    object-position: center;
-    width: 83px;
-    align-self: start;
-  }
-  .nav-menu {
-    justify-content: flex-end;
-    align-items: center;
-    display: flex;
-    gap: 30px;
-    margin: auto 0;
-  }
-  
-  @media (max-width: 991px) {
-    .nav-menu {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-  }
-  
-  .nav-menu {
-    justify-content: end;
-    align-items: center;
-    display: flex;
-    gap: 40px;
-    margin: auto 0;
-    
-  }
-
-  @media (max-width: 991px) {
-    .nav-menu {
-      flex-wrap: wrap;
-    }
-  }
-  
-.nav-item-home {
-    color: var(--royal-blue-while-pressed, #383782);
-  }
-  .nav-item {
-    font-family: Roboto, sans-serif;
-    text-align: center;
-    margin: auto 0;
-  }
-
-  .nav-item-home {
-    color: var(--royal-blue-while-pressed, #383782);
-  }
-  .nav-item {
-    font-family: Roboto, sans-serif;
-    text-align: center;
-    margin: auto 0;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none; /* Xóa đường gạch chân */
-  }
-  
-  .nav-item-home {
-    color: var(--royal-blue-while-pressed, #383782);
-  }
-  
-  .nav-item:hover {
-    background-color: var(--royal-blue-while-pressed, #383782);
-    color: #fff;
-    border-radius: 5px;
-  }
-  .vertical-divider {
-    background-color: var(--Shade-400, #9da8be);
-    width: 2px;
-    height: 24px;
-    margin: auto 0;
-  }
-  .vertical-divider {
-    background-color: var(--Shade-400, #9da8be);
-    width: 2px;
-    height: 24px;
-    margin: auto 0;
-  }
-
-  .profile-image {
-    aspect-ratio: 1;
-    object-fit: auto;
-    object-position: center;
-    width: 32px;
-    margin: auto 0;
-  }
-  .profile-name {
-    font-family: Roboto, sans-serif;
-    margin: auto 0;
-    font-weight: 600;
-  }
-  
-  .profile-name {
-    font-family: Roboto, sans-serif;
-    margin: auto 0;
-  }
-  .logout-btn:hover {
-    background-color: #14203b;
-  }
-  
-  @media (max-width: 991px) {
-    .logout-btn {
-      white-space: initial;
-    }
-  }
-  .logout-btn {
-    font-family: Roboto, sans-serif;
-    border-radius: 5px;
-    background-color: var(--Royal-Blue, #1a2c50);
-    color: var(--Pastel-Yellow, #f2c46f);
-    text-align: center;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .logout-btn {
-    font-family: Roboto, sans-serif;
-    border-radius: 5.067px;
-    background-color: var(--Royal-Blue, #1a2c50);
-    color: var(--Pastel-Yellow, #f2c46f);
-    text-align: center;
-    padding: 12px 8px;
-  }
-
-  @media (max-width: 991px) {
-    .logout-btn {
-      white-space: initial;
-    }
-  }
-  
+ 
+       
 
 
 
   .containerSuceess {
             text-align: center;
             animation: fadeIn 2s ease-in-out;
+            margin-bottom: 50;
         }
         .icon {
             font-size: 4em;
@@ -285,274 +97,395 @@
                 transform: scale(1);
             }
         }
-        .info-footer {
-    background-color: var(--White, #fff);
-    align-self: stretch;
-    display: flex;
-    margin-top: 128px;
-    width: 100%;
-    padding-bottom: 68px;
-    flex-direction: column;
-  }
-
-  @media (max-width: 991px) {
-    .info-footer {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-  }
-  .info-footer {
-    background-color: #f8f8f8;
-    padding: 50px 0;
-    text-align: center;
-  }
-  .divider {
-    background-color: #ddd;
-    height: 1px;
-    margin: 20px 0;
-  }
-  .vertical-divider {
-    background-color: var(--Shade-400, #9da8be);
-    width: 2px;
-    height: 24px;
-    margin: auto 0;
-  }
-  .divider {
-    background-color: var(--Shade-300, #bdc5d4);
-    min-height: 1px;
-    width: 100%;
-  }
-
-  @media (max-width: 991px) {
-    .divider {
-      max-width: 100%;
-    }
-  }
-  .footer-content {
-    align-self: center;
-    display: flex;
-    margin-top: 38px;
-    width: 100%;
-    max-width: 1161px;
-    gap: 20px;
-    padding: 0 20px;
-  }
-
-  @media (max-width: 991px) {
-    .footer-content {
-      max-width: 100%;
-      flex-wrap: wrap;
-    }
-  }
-  .footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  .footer-column {
-    flex-grow: 1;
-    flex-basis: auto;
-  }
-
-  @media (max-width: 991px) {
-    .footer-column {
-      max-width: 100%;
-    }
-  }
-  @media (max-width: 768px) {
-    .footer-column {
-        max-width: 100%;
-    }
-  }
-  .footer-column {
-    flex: 1;
-    max-width: 300px;
-    margin: 20px;
-  }
-
-  .footer-item {
-    display: flex;
-    flex-direction: column;
-    line-height: normal;
-    width: 31%;
-  }
-  .social-section {
-    display: flex;
-    flex-direction: column;
-  }
-  .social-content {
-    display: flex;
-    flex-direction: column;
-  }
-  .social-title {
-    color: var(--Shade-900, #333);
-    font: 500 18px Roboto, sans-serif;
-  }
-  .social-icons img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: transform 0.3s ease-in-out;
-  }
+        * {
+  box-sizing: border-box;
+}
+header {
+  background-color: #008489;
+  height: 66px;
+}
+html, body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background: linear-gradient(120deg, #b96529, #44ad96);
   
-  .social-icons img:hover {
-    transform: scale(1.1);
-  }
-  .social-icon {
-    aspect-ratio: 1;
-    object-fit: auto;
-    object-position: center;
-    width: 24px;
-  }
-  .social-icons {
-    display: flex;
-    margin-top: 24px;
-    padding-right: 80px;
-    gap: 18px;
-  }
+  font-family: 'Lora', serif;
+}
 
-  @media (max-width: 991px) {
-    .social-icons {
-      padding-right: 20px;
-    }
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Candal', serif;
+  color: #444;
+  margin:  5px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  .app-section {
-    display: flex;
-    margin-top: 42px;
-    flex-direction: column;
-  }
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
 
-  @media (max-width: 991px) {
-    .app-section {
-      margin-top: 40px;
-    }
-  }
-  .app-title {
-    color: var(--Shade-900, #333);
-    font: 500 18px Roboto, sans-serif;
-  }
-  .app-links img {
-    width: 150px;
-    height: auto;
-    margin-top: 10px;
-  }
-  .app-links {
-    display: flex;
-    margin-top: 24px;
-    gap: 20px;
-    justify-content: flex-start;
-  }
-  .app-link {
-    aspect-ratio: 3.33;
-    object-fit: auto;
-    object-position: center;
-    width: 110px;
-    max-width: 100%;
-  }
-  .footer-note {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #666;
-  }
-  .footer-note {
-    color: var(--Shade-900, #333);
-    margin-top: 38px;
-    font: 400 12px Roboto, sans-serif;
-  }
+}
+.btn{
+  padding: .5rem 1rem;
+  background: #006669;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.btn-big {
+  padding: .7rem 1.3rem;
+  line-height: 1.3rem;
+}
+.btn:hover {
+  background: #005255;
+  color: white !important;
+}
+.text-input {
+  width: 100%;
+  padding: .7rem 1rem;
+  display: inline;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  color: #444;
+  line-height:1.5rem;
+  font-size: 1.2rem;
+  font-family: 'Lora', serif;
+}
+
+/* NAV Bar*/
+header * {
+  color: #fff;
+}
+header .logo {
+  float: left;
+  height: inherit;
+  margin-left: 2em;
+
+}
+
+header .logo-text {
+  margin: 9px;
+  font-family: 'Candal', serif;
+}
+header ul{
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.showing {
+  max-height: 100em;
+}
+header ul li {
+  float: left;
+  position: relative;
+}
+header ul li ul {
+  position: absolute;
+  top: 66px;
+  right: 0px;
+  width: 180px;
+  display: none;
+  z-index: 88888;
+}
+header ul li:hover ul {
+  display: block;
+}
+header ul li ul li {
+  width: 100%;
+}
+header ul li ul li a {
+  padding: 10px;
+  background-color: white;
+  color: #444;
+}
+
+header ul li ul li a.logout {
+ color: red;
+}
+header ul li ul li a:hover {
+  background-color: #d5d6d6;
+}
+header ul li a {
+  display: block;
+  padding: 21px;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+header ul li a:hover {
+  background: #006669;
+  transition: 0.5s;
+}
+
+header .menu-toggle {
+  display: none;
+  float: right;
+  padding: 0px;
+  margin: 0px;
+  height: 66px;
+  width: 66px;
+  background-color: #008489;
+  color: #fff;
+  text-align: center;
+  line-height: 66px;
+  cursor: pointer;
+}
 
 
-  
 
 
-  @media (max-width: 991px) {
-    .footer-item {
+/* Footer */
+.footer {
+  background: #303036;
+  color: #d3d3d3;
+  height: 400px;
+  position: relative;
+}
+.footer .footer-content {
+  height: 350px;
+  display: flex;
+}
+
+.footer .footer-content .footer-section {
+  flex: 1;
+  padding: 25px;
+}
+.footer .footer-content h1,
+.footer .footer-content h2 {
+  color:white
+}
+
+.footer .footer-content .about h1 {
+  color: #05f7ff;
+  margin-bottom: 20px;
+}
+
+.footer .footer-content .about .contact span {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.footer .footer-content .about .socials a {
+  border: 1px solid gray;
+  width: 45px;
+  height: 41px;
+  padding-top: 5px;
+  margin-right: 5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.3em;
+  border-radius: 5px;
+  transition: all .3s ;
+}
+
+.footer .footer-content .about .socials a:hover {
+  border: 1px solid white;
+  color: white;
+  transition: all .3s;
+}
+
+.footer .footer-content .links ul a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  transition: all .3s ;
+}
+
+.footer .footer-content .links ul a:hover {
+  color: white;
+  margin-left: 15px;
+  transition: all .3s ;
+} 
+
+.footer .footer-content .contact-form .contact-input {
+  background: #272727; 
+  color: #bebdbd;
+  margin-bottom: 10px;
+  line-height: 1.5rem;
+  padding: .9rem 1.4rem;
+  border: none;
+
+}
+
+.footer .footer-content .contact-form .contact-input:focus {
+  background: #1a1a1a;
+
+}
+.footer .footer-content .contact-form .contact-btn {
+  float: right;
+  font-size: 1.1em;
+  font-family: 'Lora', serif;
+}
+
+.footer .footer-bottom {
+  background: #303036;
+  color: #d3d3d3;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 20px;
+}
+
+
+
+
+/* Media Queries */
+@media only screen and (max-width: 934px) {
+  .content {
       width: 100%;
-    }
   }
-  .footer-info {
-    display: flex;
-    flex-direction: column;
-    color: var(--Shade-900, #333);
-    text-align: center;
+  .content .main-content {
+      width: 100%;
+      padding: 10px;
   }
-
-  @media (max-width: 991px) {
-    .footer-info {
-      margin-top: 40px;
-    }
+  .content .main-content .post {
+      width: 100%;
   }
-  .footer-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
+  .content .sidebar {
+      width: 100%;
+      padding: 10px;
   }
-  .footer-title {
-    font: 500 18px Roboto, sans-serif;
+  .content .sidebar .section.search {
+      margin-top: 30px;
   }
-
-  .footer-list {
-    display: flex;
-    margin-top: 24px;
-    flex-direction: column;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 150%;
+  .footer {
+      height: auto;
   }
-  .footer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .list-item {
-    font-family: Roboto, sans-serif;
-    justify-content: center;
-  }
-
-  .list-item:not(:first-of-type) {
-    margin-top: 18px;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 991px) {
-    .list-item:not(:first-of-type) {
-      white-space: initial;
-    }
-  }
-  .list-item {
-    margin-bottom: 8px;
-    font-size: 16px;
-    color: #666;
-  }
-  .footer-items {
-    gap: 20px;
-    display: flex;
-  }
-
-  @media (max-width: 991px) {
-    .footer-items {
+  .footer .footer-content {
+      height: auto;
       flex-direction: column;
-      align-items: stretch;
-      gap: 0px;
-    }
   }
+  .footer .footer-content .contact-form {
+     padding-bottom: 90px;
+  }
+  .footer .footer-content .contact-form .contact-btn {
+      width: 100%;
+  }
+  
+}
+@media only screen and (max-width: 770px) {
+  header {
+      position: relative;
+  }
+  .main-content-wrapper {
+      padding: 10px;
+  }
+  header ul {
+      width: 100%;
+      background: #0E94A0;
+      max-height: 0px;
+      overflow: hidden;
+  }
+  header ul li {
+      width: 100%;
+      
+  }
+  header ul li ul {
+      position: static;
+      display: block;
+      width: 100%;
+  }
+  header ul li ul li a {
+      padding: 10px;
+      background-color: #0E94A0;
+      color: white;
+      padding-left: 50px;
+  }
+  header ul li ul li a {
+      background: #006669
+      ;
+  }
+  header ul li ul li a.logout {
+      color: red;
+  }
+  header .menu-toggle {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 0px;
+      font-size: 1.9em;
+  }
+  header .logo {
+      margin-left: .8em;
+  }
+  header .logo-text {
+      margin: 9px;
+      font-family: 'Candal', serif;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content .main-content .post{
+      height: auto;
+  }
+  .content .main-content .single {
+      padding: 10px 20px; 
+  }
+  .content .main-content .post .post-image {
+      width: 100%;
+  }
+  .content .main-content .post .post-preview {
+      width: 100%;
+  }
+  .content .main-content .post .read-more {
+      position: static;
+      display: block;
+      width: 100%;
+      text-align: center;
+  }
+  .post-slider .next {
+      right: 10px;
+  }
+  .post-slider .prev {
+      left: 10px;
+  }
+  
+}
 
 
     </style>
 
-    <section class="container">
-        <header class="header">
-            <img id="img-logo" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/848384e8253752a1dc03b823c337505f21228e46c1847bd76567f72946482aac?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" alt="Logo" class="logo" />
-            <nav class="nav-menu">
-              <a href="index.html" class="nav-item nav-item-home">Home</a>
-              <a href="myTicket.html" class="nav-item">My Tickets</a>
-              <a href="News.html" class="nav-item">Too News</a>
-              <div class="vertical-divider"></div>
-              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a3ca842d4cd4de61297eebe8f08acb763755b34885f1a9221275a7018273ae5?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" alt="Profile Picture" class="profile-image" />
-              <span class="profile-name">Hoang Phuc</span>
-              <button class="logout-btn" tabindex="0">Logout</button>
-            </nav>
-          </header>
+<header>
+  <div class ="logo">
+      <h1 class = "logo-text"> <span> Too</span></h1>
+  </div>    
+  <i class="fa fa-bars menu-toggle"></i>
+  <ul class="nav">
+      <li>
+          <a href="index.html"> Home</a>
+          <ul>
+              <li><a href="index.html">Dashboard</a></li>
+              <li><a href="login.html">Logout</a></li>
+          </ul>
+      </li>
+      <li><a href="#"> News</a></li>
+      <li><a href="myTicket.html">Ticket</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <!-- <li><a href="#"> Sign Up</a></li>
+      <li><a href="#"> Login</a></li> -->
+      <li>
+          <a href="#">
+              <i class="fa fa-user"></i>
+              Hoang Phuc
+              <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+          </a>
+          <ul>
+              <li><a href="index.html">Dashboard</a></li>
+              <li><a href="login.html" class="logout">Logout</a></li>
+          </ul>
+      </li>
+      
+   </ul>
+  </header>
           
         <main>
             <div class="containerSuceess">
@@ -567,74 +500,60 @@
             </div>
         </main>
 
-        <footer class="info-footer">
-            <div class="divider"></div>
-            <div class="footer-content">
-              <div class="footer-column">
-                <div class="footer-items">
-                  <div class="footer-item">
-                    <div class="footer-info">
-                      <h2 class="footer-title">Company</h2>
-                      <div class="footer-list">
-                        <p class="list-item">Contact us</p>
-                        <p class="list-item">About</p>
-                        <p class="list-item">Partner</p>
-                      </div>
-                    </div>
+        <div class="footer">
+          <div class="footer-content">
+              <div class="footer-section about">
+                  <h1 class ="logo-text"> <span>Too</span></h1>
+                  <p> 
+                      Too is a ticket booking website where you can find the best price tickets for your favorite movie.
+                  </p>
+                  <div class="contact">
+                      <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
+                      <span><i class="fas fa-envelope"></i> &nbsp; too@hotline.com</span>
                   </div>
-        
-                  <div class="footer-item">
-                    <div class="footer-info">
-                      <h2 class="footer-title">About</h2>
-                      <div class="footer-list">
-                        <p class="list-item">Too News</p>
-                        <p class="list-item">Cinema</p>
-                        <p class="list-item">My Ticket</p>
-                        <p class="list-item">Payment</p>
-                        <p class="list-item">Instalment</p>
-                      </div>
-                    </div>
+  
+                  <div class ="socials"> 
+                      <a href="#"><i class="fab fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
                   </div>
-        
-                  <div class="footer-item">
-                    <div class="footer-info">
-                      <h2 class="footer-title">Support</h2>
-                      <div class="footer-list">
-                        <p class="list-item">Help Center</p>
-                        <p class="list-item">Privacy Policy</p>
-                        <p class="list-item">FAQ</p>
-                        <p class="list-item">Terms and Conditions</p>
-                        <p class="list-item">Update Covid-19</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div class="footer-column">
-                <section class="social-section">
-                  <div class="social-content">
-                    <h2 class="social-title">Follow Social Media</h2>
-                    <div class="social-icons">
-                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b8fa93cc29d50df9760b627d48135a7dbadd49b8b1e585d1e8eed284fa0e1cc?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e8620ff9de9fbf7819b69526474a6f1f65380ea433d6b886495490641c02d04a?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/24a966dd74f3fe546af8ace34e38507b34e6a2648b933814d50a9cd72800ffb4?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                    </div>
-                  </div>
-                  <div class="app-section">
-                    <div class="social-content">
-                      <h2 class="app-title">Download Too Application</h2>
-                      <div class="app-links">
-                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8708d9c51565c9f862ab41f4083d6f99d94dad78cf9f5e81f4c79f75610dbb0c?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="app-link" />
-                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2b5dbedf9db16aee77498efe1dd3b9cb5c1b57435369cf45520ed4d75e82b82?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="app-link" />
-                      </div>
-                      <p class="footer-note">2024 Too - PT Hoang Phuc and Van Kiet.</p>
-                    </div>
-                  </div>
-                </section>
+              <div class="footer-section links">
+                  <h2>Quick links</h2>
+                  <br>
+                  <ul> 
+                      <a href="#""><li>Events</li></a>
+                      <a href="#""><li>Team</li></a>
+                      <a href="#""><li>Mentores</li></a>
+                      <a href="#""><li>Gallery</li></a>
+                      <a href="#""><li>Terms and Condition</li></a>
+                  </ul>
               </div>
-            </div>
-          </footer>
-    </section>
+              <div class="footer-section contact-form">
+                  <h2>Contact us</h2>
+                  <br>
+                  <form action="index.html" method="post">
+                      <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                      <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                      <button type="submit" class="btn btn-big contact-btn">
+                          <i class="fas fa-envelope"></i>
+                          Send
+                  </form>
+              </div>
+          </div>
+  
+          <div class="footer-bottom">
+              &copy; too.com | Designed by Kiet
+          </div>
+      </div>    
+      <script> document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav').classList.toggle('showing');
+            document.querySelector('.nav ul').classList.toggle('showing');
+        });
+    });
+    </script>
 </body>
 
 </html>
