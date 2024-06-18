@@ -465,7 +465,7 @@ header .menu-toggle {
 }
 
 .schedule-description {
-    color: var(--Shade-600, #5a637a);
+    color: var(--Shade-600, #fff700);
     margin-top: 32px;
     font: 400 16px/150% Roboto, sans-serif;
 }
