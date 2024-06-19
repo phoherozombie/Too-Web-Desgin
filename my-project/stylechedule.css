@@ -9,7 +9,7 @@ html, body {
   height: 100%;
   padding: 0px;
   margin: 0px;
-  background: linear-gradient(120deg, #b96529, #44ad96);
+  background: linear-gradient(to right, #13547a, #80d0c7); 
   
   font-family: 'Lora', serif;
 }
@@ -456,6 +456,7 @@ header .menu-toggle {
     padding: 18px;
     border: 1px solid rgba(90, 99, 122, 1);
     transition-duration: 0.4s;
+    cursor: pointer;
 
 }
 .date-item:hover{

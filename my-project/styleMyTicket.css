@@ -9,7 +9,7 @@ html, body {
   height: 100%;
   padding: 0px;
   margin: 0px;
-  background: linear-gradient(120deg, #b96529, #44ad96);
+  background: linear-gradient(to right, #13547a, #80d0c7); 
   
   font-family: 'Lora', serif;
 }
