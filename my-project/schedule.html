@@ -1,255 +1,509 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schedule Film</title>
-  <link rel="stylesheet" href="stylechedule.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ticket Booking</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+  <link rel="stylesheet" type="text/css" href="progress.css">
+
+  <link rel="stylesheet" type="text/css" href="stylechedule.css">
+
+  <!-- ..............For progress-bar............... -->
+  <link rel="stylesheet" type="text/css" href="styleMyTicket.css">
+
+  <link rel="stylesheet" type="text/css" href="payment.css" />
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
 </head>
+
 <body>
+  <header id="site-header" class="w3l-header fixed-top">
 
-
-  <header>
-    <div class ="logo">
-        <h1 class = "logo-text"> <span> Too</span></h1>
-    </div>    
-    <i class="fa fa-bars menu-toggle"></i>
-    <ul class="nav">
-        <li>
-            <a href="index.html"> Home</a>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="login.html">Logout</a></li>
-            </ul>
-        </li>
-        <li><a href="News.html"> News</a></li>
-        <li><a href="myTicket.html">Ticket</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <!-- <li><a href="#"> Sign Up</a></li>
-        <li><a href="#"> Login</a></li> -->
-        <li>
-            <a href="#">
-                <i class="fa fa-user"></i>
-                Hoang Phuc
-                <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-            </a>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="login.html" class="logout">Logout</a></li>
-            </ul>
-        </li>
+    <!--/nav-->
+    <nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+      <div class="container">
+        <h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log" aria-hidden="true"></span>
+            Too </a></h1>
         
-     </ul>
-    </header>
- 
-    <div class="content-wrapper">
-        <h1 class="schedule-title">SCHEDULE</h1>
-        <p class="schedule-description">Select the schedule of the cinema you want to watch</p>
-        <div class="schedule-content">
-            <div class="schedule-columns">
-                <aside class="main-column">
-                    <div class="date-selection">
-                        <div class="date-list">
-                            <div class="date-item active-date-item">
-                                <p class="date-text">2 June</p>
-                                <p class="day-text ">MON</p>
-                            </div>
-                            <div class="date-item" >
-                                <p class="date-text">3 June</p>
-                                <p class="day-text">TUE</p>
-                            </div>
-                            <div class="date-item">
-                                <p class="date-text">4 June</p>
-                                <p class="day-text">WED</p>
-                            </div>
-                            <div class="date-item">
-                                <p class="date-text">5 June</p>
-                                <p class="day-text">THU</p>
-                            </div>
-                            <div class="date-item">
-                                <p class="date-text">6 June</p>
-                                <p class="day-text">FRI</p>
-                            </div>
-                        </div> 
-                        
-                        <hr class="section-divider">
-                        <div class="location-wrapper">
-                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/381b913ce8c0bafe8fa423ff84d03f2d6fbdcbb22ca1a06bb3b3c408f55a1393?apiKey=b6c35e937f8c41d09a0fcca0f11babf1&" class="location-icon" alt="Location icon" />
-                            <p class="location-text">DA NANG</p>
-                        </div>
-                        <div class="search-wrapper">
-                            <div class="search-bar">
-                                <input class="search-input" type="text" placeholder="Search for cinema" aria-label="Search for cinema">
-                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cdde0d297c718c5555605841bf9f7523de36124c327d519a6fe721140972180d?apiKey=b6c35e937f8c41d09a0fcca0f11babf1&" class="search-icon" alt="Search icon" />
-                            </div>
-                            <div class="filter-wrapper">
-                                <div class="filter-item">
-                                    <p class="filter-text">Cinema</p>
-                                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5b8b88bcb1a0dda55b3497dff662b635a5e53102cf9d7eaa1e22ad65242b4eb?apiKey=b6c35e937f8c41d09a0fcca0f11babf1&" class="filter-icon" alt="Filter icon">
-                                </div>
-                                <div class="filter-item">
-                                    <p class="filter-text">Sort</p>
-                                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5b8b88bcb1a0dda55b3497dff662b635a5e53102cf9d7eaa1e22ad65242b4eb?apiKey=b6c35e937f8c41d09a0fcca0f11babf1&" class="filter-icon" alt="Sort icon">
-                                </div>
-                            </div>
-                        </div>
-                        <article class="cinema-wrapper">
-                            <aside class="cinema-header">
-                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/96ed6622c9dba11b0894363b2f38395ed612e9461e4aede93f19c5c1bcb78cac?apiKey=b6c35e937f8c41d09a0fcca0f11babf1&" class="cinema-icon" alt="CGV Icon">
-                                <h2 class="cinema-name">CGV VINCOM PLAZA</h2>
-                            </aside>
-                            <p class="cinema-tag">CGV</p>
-                        </article>
-                        <p class="cinema-address">Floor 4, 910A Ngo Quyen, An Hai, Son Tra, Da Nang</p>
-                        <div class="cinema-info">
-                            <p class="cinema-type">REGULAR 2D</p>
-                            <p class="cinema-price">50.000 VND</p>
-                        </div>
-                        <div class="showtimes">
-                            <p class="showtime showtime-gray">11:00</p>
-                            <p class="showtime showtime-gray">13:45</p>
-                            <p class="showtime showtime-blue">14:40</p>
-                            <p class="showtime showtime-border">15:40</p>
-                        </div>
-                        <div class="showtimes">
-                            <p class="showtime showtime-border">17:15</p>
-                            <p class="showtime showtime-border">18:15</p>
-                            <p class="showtime showtime-border">20:00</p>
-                            <p class="showtime showtime-border">21:00</p>
-                        </div>
-                    </div>
-                </aside>
-                <aside class="secondary-column">
-                    <div class="movie-card">
-                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1afbc0ba5d9db2ae419130c1e8ba1ccce08a796fd7b5c12eff5c5c263a5fc7b?apiKey=b6c35e937f8c41d09a0fcca0f11babf1&" class="movie-poster" alt="Spider-Man : No Way Home Poster" />
-                        <h2 class="movie-title">SPIDERMAN : NO WAY HOME</h2>
-                        <div class="movie-info">
-                            <div class="info-list">
-                                <div class="info-column">
-                                    <p class="info-header">Genres</p>
-                                    <p class="info-header">Duration</p>
-                                    <p class="info-header">Director</p>
-                                    <p class="info-header">Age Rating</p>
-                                </div>
-                                <div class="info-column">
-                                    <p class="info-text">Action</p>
-                                    <p class="info-text">2 hours 28 minutes</p>
-                                    <p class="info-text">Jon Watts</p>
-                                    <p class="info-text">Good</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="booking-card">
-                            <h3 class="booking-header">CGV VINCOM PLAZA</h3>
-                            <p id="booking-date" class="booking-date">Tuesday, 3 June 2024</p>
-                            <div class="booking-details">
-                                <p class="booking-type">REGULAR 2D</p>
-                                <p id="booking-showtime" class="booking-showtime">14:40</p>
-                            </div>
-                            <p class="booking-note">* Seat selection can be done after this</p>
-                            <button id="buyNow"  class="booking-button">BUY NOW</button>
-                        </div>
-                    </div>
-                </aside>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         </div>
+
+        <div class="Login_SignUp" id="login_s">
+          <!-- style="font-size: 2rem ; display: inline-block; position: relative;" -->
+          <!-- <li class="nav-item"> -->
+          <a class="nav-link" href="login.html"><i class="fa fa-user-circle-o"></i></a>
+          <!-- </li> -->
+        </div>
+        <!-- toggle switch for light and dark theme -->
+        <div class="mobile-position">
+          <nav class="navigation">
+            <div class="theme-switch-wrapper">
+              <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox">
+                <div class="mode-container">
+                  <i class="gg-sun"></i>
+                  <i class="gg-moon"></i>
+                </div>
+              </label>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container" id="progress-container-id">
+    <div class="row">
+      <div class="col">
+        <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+          <form id="form">
+            <ul id="progressbar" class="progressbar-class">
+              <li class="active" id="step1">Show timing selection</li>
+              <li id="step2" class="not_active">Seat Selection</li>
+              <li id="step3" class="not_active">Payment</li>
+              <li id="step4" class="not_active">E-Ticket</li>
+            </ul>
+            <br>
+            <fieldset>
+              <div id="screen-select-div">
+                <h2>Show time Selection</h2>
+                <div class="carousel carousel-nav" data-flickity='{"contain": true, "pageDots": false }'>
+                  <div class="carousel-cell" id="1" onclick="myFunction(1)">
+                    <div class="date-numeric">13</div>
+                    <div class="date-day">Today</div>
+                  </div>
+
+                  <div class="carousel-cell" id="2" onclick="myFunction(2)">
+                    <div class="date-numeric">14</div>
+                    <div class="date-day">Tomorrow</div>
+                  </div>
+                  <div class="carousel-cell" id="3" onclick="myFunction(3)">
+                    <div class="date-numeric">15</div>
+                    <div class="date-day">Monday</div>
+                  </div>
+                  <div class="carousel-cell" id="4" onclick="myFunction(4)">
+                    <div class="date-numeric">16</div>
+                    <div class="date-day">Tuesday</div>
+                  </div>
+                  <div class="carousel-cell" id="5" onclick="myFunction(5)">
+                    <div class="date-numeric">17</div>
+                    <div class="date-day">Wednesday</div>
+                  </div>
+                  <div class="carousel-cell" id="6" onclick="myFunction(6)">
+                    <div class="date-numeric">18</div>
+                    <div class="date-day">Thursday</div>
+                  </div>
+                  <div class="carousel-cell" id="7" onclick="myFunction(7)">
+                    <div class="date-numeric">19</div>
+                    <div class="date-day">Friday</div>
+                  </div>
+                </div>
+                <ul class="time-ul">
+                  <li class="time-li">
+                    <div class="screens">
+                      Screen 1
+                    </div>
+                    <div class="time-btn">
+                      <button class="screen-time" onclick="timeFunction()">
+                        1:05 PM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        4:00 PM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        9:00 PM
+                      </button>
+                    </div>
+                  </li>
+                  <li class="time-li">
+                    <div class="screens">
+                      Screen 2
+                    </div>
+                    <div class="time-btn">
+                      <button class="screen-time" onclick="timeFunction()">
+                        3:00 PM
+                      </button>
+                    </div>
+                  </li>
+                  <li class="time-li">
+                    <div class="screens">
+                      Screen 3
+                    </div>
+                    <div class="time-btn">
+                      <button class="screen-time" onclick="timeFunction()">
+                        9:05 AM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        10:00 PM
+                      </button>
+                    </div>
+                  </li>
+                  <li class="time-li">
+                    <div class="screens">
+                      Screen 4
+                    </div>
+                    <div class="time-btn">
+                      <button class="screen-time" onclick="timeFunction()">
+                        9:05 AM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        11:00 AM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        3:00 PM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        7:00 PM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        10:00 PM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        11:00 PM
+                      </button>
+                    </div>
+                  </li>
+                  <li class="time-li">
+                    <div class="screens">
+                      Screen 5
+                    </div>
+                    <div class="time-btn">
+                      <button class="screen-time" onclick="timeFunction()">
+                        9:05 AM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        12:00 PM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        1:00 PM
+                      </button>
+                      <button class="screen-time" onclick="timeFunction()">
+                        3:00 PM
+                      </button>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+              <input id="screen-next-btn" type="button" name="next-step" class="next-step" value="Continue Booking"
+                disabled />
+            </fieldset>
+            <fieldset>
+
+              <div>
+                <iframe id="seat-sel-iframe"
+                  style="  box-shadow: 0 14px 12px 0 var(--theme-border), 0 10px 50px 0 var(--theme-border); width: 800px; height: 550px; display: block; margin-left: auto; margin-right: auto;"
+                  src="seats.html"></iframe>
+              </div>
+              <br>
+              <input type="button" name="next-step" class="next-step" value="Proceed to Payment" />
+              <input type="button" name="previous-step" class="previous-step" value="Back" />
+            </fieldset>
+            <fieldset>
+              <!-- Payment Page -->
+              <div id="payment_div">
+                <div class="payment-row">
+                  <div class="col-75">
+                    <div class="payment-container">
+                      <div class="payment-row">
+                        <div class="col-50">
+                          <h3 id="payment-h3">Payment</h3>
+                          <div class="payment-row payment">
+                            <div class="col-50 payment">
+                              <label for="card" class="method card">
+                                <div class="icon-container">
+                                  <i class="fa fa-cc-visa" style="color: navy"></i>
+                                  <i class="fa fa-cc-amex" style="color: blue"></i>
+                                  <i class="fa fa-cc-mastercard" style="color: red"></i>
+                                  <i class="fa fa-cc-discover" style="color: orange"></i>
+                                </div>
+                                <div class="radio-input">
+                                  <input type="radio" id="card" />
+                                  Pay 50.000 VND with credit card
+                                </div>
+                              </label>
+                            </div>
+                            <div class="col-50 payment">
+                              <label for="paypal" class="method paypal">
+                                <div class="icon-container">
+                                  <i class="fa fa-paypal" style="color: navy"></i>
+                                </div>
+                                <div class="radio-input">
+                                  <input id="paypal" type="radio" checked>
+                                  Pay $30.00 with PayPal
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="payment-row">
+                            <div class="col-50">
+                              <label for="cname">Cardholder's Name</label>
+                              <input type="text" id="cname" name="cardname" placeholder="Firstname Lastname" required />
+                            </div>
+                            <div class="col-50">
+                              <label for="ccnum">Credit card number</label>
+                              <input type="text" id="ccnum" name="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx"
+                                required />
+                            </div>
+                          </div>
+                          <div class="payment-row">
+                            <div class="col-50">
+                              <label for="expmonth">Exp Month</label>
+                              <input type="text" id="expmonth" name="expmonth" placeholder="September" required />
+                            </div>
+                            <div class="col-50">
+                              <div class="payment-row">
+                                <div class="col-50">
+                                  <label for="expyear">Exp Year</label>
+                                  <input type="text" id="expyear" name="expyear" placeholder="yyyy" required />
+                                </div>
+                                <div class="col-50">
+                                  <label for="cvv">CVV</label>
+                                  <input type="text" id="cvv" name="cvv" placeholder="xxx" required />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input type="button" name="next-step" class="next-step pay-btn" value="Confirm Payment" />
+              <input type="button" name="previous-step" class="cancel-pay-btn" value="Cancel Payment"
+                onclick="location.href='index.html';" />
+            </fieldset>
+            <fieldset>
+              <h2>Your Ticket</h2>
+              <div class="ticket-body">
+                <div class="ticket">
+                  <div class="holes-top"></div>
+                  <div class="title">
+                    <p class="cinema">Too Entertainment</p>
+                    <p class="movie-title">Movie Name</p>
+                  </div>
+                  <div class="poster">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/25240/only-god-forgives.jpg"
+                      alt="Movie: Only God Forgives" />
+                  </div>
+                  <div class="info">
+                    <table class="info-table ticket-table">
+                      <tr>
+                        <th>SCREEN</th>
+                        <th>ROW</th>
+                        <th>SEAT</th>
+                      </tr>
+                      <tr>
+                        <td class="bigger">18</td>
+                        <td class="bigger">H</td>
+                        <td class="bigger">24</td>
+                      </tr>
+                    </table>
+                    <table class="info-table ticket-table">
+                      <tr>
+                        <th>PRICE</th>
+                        <th>DATE</th>
+                        <th>TIME</th>
+                      </tr>
+                      <tr>
+                        <td>50.000 VND </td>
+                        <td>22/06/2024</td>
+                        <td>19:30</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="holes-lower"></div>
+                  <div class="serial">
+                    <table class="barcode ticket-table">
+                      <tr>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                        <td style="background-color:black;"></td>
+                        <td style="background-color:white;"></td>
+                      </tr>
+                    </table>
+                    <table class="numbers ticket-table">
+                      <tr>
+                        <td>9</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>2</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <input type="button" name="previous-step" class="home-page-btn" value="Browse to Home Page"
+                onclick="location.href='index.html';" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="footer">
-      <div class="footer-content">
-          <div class="footer-section about">
-              <h1 class ="logo-text"> <span>Too</span></h1>
-              <p> 
-                  Too is a ticket booking website where you can find the best price tickets for your favorite movie.
-              </p>
-              <div class="contact">
-                  <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
-                  <span><i class="fas fa-envelope"></i> &nbsp; too@hotline.com</span>
-              </div>
-
-              <div class ="socials"> 
-                  <a href="#"><i class="fab fa-facebook"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-          </div>
-          <div class="footer-section links">
-              <h2>Quick links</h2>
-              <br>
-              <ul> 
-                  <a href="#""><li>Events</li></a>
-                  <a href="#""><li>Team</li></a>
-                  <a href="#""><li>Mentores</li></a>
-                  <a href="#""><li>Gallery</li></a>
-                  <a href="#""><li>Terms and Condition</li></a>
-              </ul>
-          </div>
-          <div class="footer-section contact-form">
-              <h2>Contact us</h2>
-              <br>
-              <form action="index.html" method="post">
-                  <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                  <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-                  <button type="submit" class="btn btn-big contact-btn">
-                      <i class="fas fa-envelope"></i>
-                      Send
-              </form>
-          </div>
-      </div>
-
-      <div class="footer-bottom">
-          &copy; too.com | Designed by Kiet
-      </div>
-  </div>    
-
-
-
-<script>
-   const dateItems = document.querySelectorAll('.date-item');
-   let bookDate=document.getElementById("booking-date")
-   const dates=["Monday, 2 June 2024","Tuesday, 3 June 2024","Wednesday, 4 June 2024","Thursday, 5 June 2024","Friday, 6 June 2024"];
-   
-
-// Add an event listener to each 'date-item'
-dateItems.forEach((item,index) => {
-    item.addEventListener('click', function() {
-        // Toggle the 'active-date-item' class on click
-        this.classList.toggle('active-date-item');
-        const selectedDate=dates[index];
-        bookDate.innerText = selectedDate;
-        
-
-
-
-
-    });
-});
-let bookingShowTime=document.getElementById("booking-showtime")
-const times=["11:00","13:45","14:40","15:40","17:15","18:15","20:00","21:00"];
-const showtime=document.querySelectorAll('.showtime')
-showtime.forEach((time,index)=>{
-    time.addEventListener('click',function(){
-        this.classList.toggle('showtime-blue');
-        const selectTime=times[index]
-        bookingShowTime.innerText=selectTime;
-    })
-
-
-})
-const buyNowButton= document.getElementById("buyNow")
-buyNowButton.addEventListener("click",function(){
-    window.location.href="seats.html"
-
-})
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('.nav').classList.toggle('showing');
-        document.querySelector('.nav ul').classList.toggle('showing');
-    });
-});
-
-
-
-</script>
+  </div>
 </body>
+<script>
+  let prevId = "1";
+
+  window.onload = function () {
+    document.getElementById("screen-next-btn").disabled = true;
+  }
+
+  function timeFunction() {
+    document.getElementById("screen-next-btn").disabled = false;
+  }
+
+  function myFunction(id) {
+    document.getElementById(prevId).style.background = "rgb(243, 235, 235)";
+    document.getElementById(id).style.background = "#df0e62";
+    
+    prevId = id;
+  }
+</script>
+
+<script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+<!-- Flickity libary to create cảousel and slider -->
+<script type="text/javascript" src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'>
+</script>
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<!-- cloudflare reduce load page -->
+<script src="theme-change.js"></script>
+<!-- DarkMode and LightMode -->
+<script type="text/javascript" src="schedule.js"></script>
+<!--Some activity from JS  -->
+<!-- Using JQuery for DOM -->
 </html>
