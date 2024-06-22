@@ -2,19 +2,19 @@
     box-sizing: border-box;
 }
 header {
-    background-color: #008489;
+    background-color: #fff;
     height: 66px;
 }
 html, body {
     height: 100%;
     padding: 0px;
     margin: 0px;
-    background: linear-gradient(to right, #13547a, #80d0c7); 
+    background-color: #f6f6f6;
     font-family: 'Lora', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Candal', serif;
+    font-family: 'Work Sans',  sans-serif;
     color: #444;
     margin:  5px;
 }
@@ -31,7 +31,7 @@ a {
 }
 .btn{
     padding: .5rem 1rem;
-    background: #006669;
+    background: #F27A3A;
     color: white;
     border: 1px solid transparent;
     border-radius: .25rem;
@@ -42,7 +42,7 @@ a {
     line-height: 1.3rem;
 }
 .btn:hover {
-    background: #005255;
+    background: #db6e33;
     color: white !important;
 }
 .text-input {
@@ -60,7 +60,7 @@ a {
 
 /* NAV Bar*/
 header * {
-    color: #fff;
+    color: black;
 }
 header .logo {
     float: left;
@@ -72,6 +72,7 @@ header .logo {
 header .logo-text {
     margin: 9px;
     font-family: 'Candal', serif;
+    color: #F27A3A;
 }
 header ul{
     float: right;
@@ -110,7 +111,7 @@ header ul li ul li a.logout {
    color: red;
 }
 header ul li ul li a:hover {
-    background-color: #d5d6d6;
+    background-color: #F27A3A;
 }
 header ul li a {
     display: block;
@@ -119,7 +120,8 @@ header ul li a {
     text-decoration: none;
 }
 header ul li a:hover {
-    background: #006669;
+    background: #F27A3A;
+    color: white;
     transition: 0.5s;
 }
 
@@ -130,27 +132,73 @@ header .menu-toggle {
     margin: 0px;
     height: 66px;
     width: 66px;
-    background-color: #008489;
-    color: #fff;
+    background-color: #fff;;
+    color: #F27A3A;
     text-align: center;
     line-height: 66px;
     cursor: pointer;
+}
+header .menu-toggle:hover {
+    background-color: #db6e33;
+    color: white;
+    transition: 0.5s;
 }
 
 .page-wrapper{
     min-height: 100%;
 }
 .page-wrapper a:hover { 
-    color: #006669;
+    color: #db6e33;
 
 }
+/* Banner Slider */
+.banner-slider {
+    position: relative;
+    margin-top: 20px;
+    border: 1px solid red;
+}
+.banner-slider .bnext {
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    font-size: 2em;
+    color:#006669;
+    cursor: pointer;
+
+}
+.banner-slider .bprev {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    font-size: 2em;
+    color:#006669;
+    cursor: pointer;
+
+}
+.banner-slider .banner-wrapper {
+    width: 80%;
+    height: 360px;
+    margin: 0px auto;
+    overflow: hidden;
+    border: 1px dashed red;
+}
+.banner-slider .banner-wrapper .banner{
+    margin: 0 ;
+    padding:0;
+    display: inline-block;
+}
+.banner-slider .banner-wrapper .banner .slider-image{
+    border-radius: 5px ;
+}
+
 /* Post Slider */
 .post-slider {
     position: relative;
 }
 .post-slider .slider-title{
-    text-align: center;
+    text-align: left;
     margin: 30px auto;
+    margin-left: 140px;
 
 }
 .post-slider .next {
@@ -158,7 +206,7 @@ header .menu-toggle {
     top: 50%;
     right: 30px;
     font-size: 2em;
-    color:#006669;
+    color:#F27A3A;
     cursor: pointer;
 
 }
@@ -166,38 +214,46 @@ header .menu-toggle {
     position: absolute;
     top: 50%;
     left:30px;
-    color:#006669;
+    font-size: 2em;
+    color: #F27A3A;
     cursor: pointer;
 
 }
 .post-slider .post-wrapper {
-    width: 84%;
+    width: 80%;
     height: 350px;
     margin: 0px auto;
     overflow: hidden;
     padding: 10px 0px 10px 0px;
+    border: 1px solid red
 }
 .post-slider .post-wrapper .post {
-    width: 300px;
-    height: 330px;
+    width: 215px;
+    height: 350px;
     margin: 0px 10px;
     display: inline-block;
     background: white;
     border-radius: 5px;
     box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+    
 
 }
 .post-slider .post-wrapper .post .post-info {
     height: 130px;
     padding: 0px 5px;
+    text-align: center;
 }
 
+.post-slider .post-wrapper .post .post-info h4 {
+    margin: 10px 0px;
+}
 .post-slider .post-wrapper .post .slider-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+
 
 /* Content */
 
@@ -249,13 +305,13 @@ header .menu-toggle {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    border: 1px solid #005255;
+    border: 1px solid #F27A3A;
     background: transparent;
     border-radius: 0px;
-    color:#005255 !important
+    color:#db6e33 !important
 }
 .content .main-content .post .read-more:hover {
-    background: #006669;
+    background: #F27A3A;
     color: white !important;
     transition: .25s;
 }
@@ -315,7 +371,7 @@ header .menu-toggle {
 
 /* Footer */
 .footer {
-    background: #303036;
+    background: #555556;
     color: #d3d3d3;
     height: 400px;
     position: relative;
@@ -335,8 +391,9 @@ header .menu-toggle {
 }
 
 .footer .footer-content .about h1 {
-    color: #05f7ff;
+    color: #F27A3A;
     margin-bottom: 20px;
+    font-family: 'Candal', serif;
 }
 
 .footer .footer-content .about .contact span {
@@ -378,7 +435,7 @@ header .menu-toggle {
 } 
 
 .footer .footer-content .contact-form .contact-input {
-    background: #272727; 
+    background: #303036; 
     color: #bebdbd;
     margin-bottom: 10px;
     line-height: 1.5rem;
@@ -388,7 +445,7 @@ header .menu-toggle {
 }
 
 .footer .footer-content .contact-form .contact-input:focus {
-    background: #1a1a1a;
+    background: #f3f3f3;
 
 }
 .footer .footer-content .contact-form .contact-btn {
@@ -398,7 +455,7 @@ header .menu-toggle {
 }
 
 .footer .footer-bottom {
-    background: #303036;
+    background: #555556;
     color: #d3d3d3;
     height: 50px;
     width: 100%;
@@ -406,14 +463,30 @@ header .menu-toggle {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
-
 
 
 
 /* Media Queries */
 @media only screen and (max-width: 934px) {
+    .banner-slider {
+        height: 265px;
+    }
+    .banner-slider .banner-wrapper {
+        height: 265px;
+    }
+    .banner-wrapper .slider-image {
+        width: 100%;
+    }
+    .banner-slider .bnext {
+        top: 113px;
+        right: 45px;
+    }
+    .banner-slider .bprev {
+        top: 113px;
+        left: 45px;
+    }
     .content {
         width: 100%;
     }
@@ -450,12 +523,12 @@ header .menu-toggle {
     header {
         position: relative;
     }
-    .main-content-wrapper {
-        padding: 10px;
-    }
+    
+
     header ul {
         width: 100%;
-        background: #0E94A0;
+        background: white;
+        color:#db6e33;
         max-height: 0px;
         overflow: hidden;
     }
@@ -470,12 +543,12 @@ header .menu-toggle {
     }
     header ul li ul li a {
         padding: 10px;
-        background-color: #0E94A0;
+        background-color: #F27A3A;
         color: white;
         padding-left: 50px;
     }
     header ul li ul li a {
-        background: #006669
+        background: #F27A3A
         ;
     }
     header ul li ul li a.logout {
@@ -495,8 +568,29 @@ header .menu-toggle {
         margin: 9px;
         font-family: 'Candal', serif;
     }
+    .main-content-wrapper {
+        padding: 10px;
+    }
+    .banner-slider {
+        position: relative;
+        height: 265px;
+    }
+    .banner-wrapper {
+        height: 265px
+    }
+
+    
 }
 @media screen and (max-width: 600px) {
+    
+    .post-slider {
+        padding-top: 30px;
+
+    }
+    .post-slider .slider-title {
+        font-size: 2em;
+        margin: 20px;
+    }
     .content .main-content .post{
         height: auto;
     }
@@ -515,10 +609,33 @@ header .menu-toggle {
         width: 100%;
         text-align: center;
     }
+    .banner-slider {
+        height:265px;
+    }
+    .banner-slider .banner-wrapper {
+        height: 265px;
+    }
+    .banner-slider .bnext {
+        right: 10px;
+    }
+    .banner-slider .bprev {
+        left: 10px;
+    }
     .post-slider .next {
         right: 10px;
     }
     .post-slider .prev {
         left: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .post-slider .slider-title {
+        font-size: 1.5em;
+        margin: 20px;
+    }
+    .content .main-content .recent-post-title{ 
+        font-size: 1.5em;
+        margin: 20px;
     }
 }
