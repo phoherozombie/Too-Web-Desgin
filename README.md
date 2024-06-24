@@ -1,25 +1,63 @@
+# Movie Ticket Booking
 
-# Dự án Web Bán Vé Xem Phim
+## Overview
+Welcome to the **Movie Ticket Booking**. Website sells movie tickets online, allowing users to log in, view showtimes, choose seats, and pay for movie tickets.
+It is a movie ticket booking website with front-end and back-end and It is available in both dark & light mode.
 
-## Tổng Quan
-Website bán vé xem phim trực tuyến, cho phép người dùng đăng nhập, xem lịch chiếu, chọn ghế, và thanh toán vé xem phim.
+## Technologies
+This project is built with robust and modern technologies to ensure high performance and scalability:
+- **Node.js**: A JavaScript runtime environment that executes JavaScript code outside of a web browser.
+- **Express.js**: A web application framework for Node.js, designed for building web applications and APIs.
+- **Bootstrap CSS**: A utility-first CSS framework for creating custom designs without leaving your HTML.
+- **Jquery**: A frontend build tool that provides a fast and lean development experience.
 
-## Chức Năng Chính
-- **Trang Chủ:** Đăng xuất, Trang chủ, Vé của tôi, Tin tức phim, Chọn lịch chiếu, Xem tất cả tin tức phim, Xem tất cả phim sắp chiếu
-- **Chọn Lịch Chiếu:** Chọn ngày, Chọn giờ, Mua ngay
-- **Chọn Ghế:** Chọn ghế, Thanh toán
-- **Xác Nhận Thanh Toán:** Trở lại, Mua vé
-- **Thanh Toán Thành Công:** Vé của tôi
-- **Phim Sắp Chiếu:** Xem chi tiết phim
-- **Tin Tức Phim:** Xem chi tiết
-- **Chi Tiết:** Xem trailer, Xem các bài viết khác
-- **Đăng Nhập:** Đăng nhập người dùng, Số điện thoại, Mật khẩu
-- **Chi Tiết Giao Dịch:** Tải ảnh xuống, Trở lại
+## Our Production: 
+[dohoangphuc.eu.org](http://dohoangphuc.eu.org)
+
+## Detail of the project
+- [Wireframe](https://www.figma.com/design/y2M5rzufGeD445zfF7HFg5/Too-Web-Design?node-id=4-9)
+- [Planning](Planning.md)
+- [Task](READMETASK..md)
+- [ERD](https://docs.google.com/document/d/1SjSVt5SHJ2N8WGEEAqyZF5ejPiy4CpCB/edit#heading=h.gjdgxs)
+
+## Setup
+
+### Prerequisites
+- Ensure you have Node.js installed on your system.
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/phoherozombie/Too-Web-Desgin.git
+
+2. Navigate to the project directory:
+    ```bash
+    cd Too-Web-Design
+
+3. Install dependencies:
+    ```bash
+    npm install
+
+### Development
+* Run the development server:
+    ```bash
+    npm run dev
+
+Open http://localhost:3000 to view it in the browser.
+
+### Deployment
+
+* Build the application for production:
+    ```bash
+    npm run build
+
+Deploy the production build to your preferred hosting service.
+
+### Contributors
+
+1. phoherozombie - Đỗ Hoàng Phúc
+2. teikv - Lê Văn Kiệt
 
 
-
-## Công Nghệ
-- Frontend: HTML, CSS, Javascript và Tailwind
-- Backend: Node.js, Express.js
-
-
+### Contact
+* Email: phuc.do220914@vnuk.edu.vn
