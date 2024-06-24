@@ -1,405 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styleSeat.css">
+	<title>Movie Ticket Booking Widget Flat Responsive Widget Template :: w3layouts</title>
+	<!-- for-mobile-apps -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords"
+		content="Movie Ticket Booking Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<link href="styleSeat.css" rel="stylesheet" type="text/css" media="all" />
+	<script src="jquery-1.11.0.min.js"></script>
+	<script src="jquery.seat-charts.js"></script>
 </head>
+
 <body>
+<div class="content">
+	<h2>Seat Booking</h2>
+	<div class="main">
+		<div class="demo">
+			<div id="seat-map">
+				<div class="front">SCREEN</div>					
+			</div>
+			<div class="booking-details">
+				<ul class="book-left">
+					<li>Movie </li>
+					<li>Time </li>
+					<li>Tickets</li>
+					<li>Total</li>
+					<li>Selected Seats</li>
+				</ul>
+				<ul class="book-right">
+					<li>: Commando 3</li>
+					<li>: April 12, 22:00</li>
+					<li>: <span id="counter">0</span></li>
+					<li>: <b><span id="total">0</span><b>.000 VND</b></b></li>
+				</ul>
+				<div class="clear"></div>
+				<ul id="selected-seats" class="scrollbar scrollbar1"></ul>
+			
+						
+				<div id="legend"></div>
+			</div>
 
+			<script type="text/javascript">
+				var price = 50; //price
+				$(document).ready(function () {
+					var $cart = $('#selected-seats'), //Sitting Area
+						$counter = $('#counter'), //Votes
+						$total = $('#total'); //Total money
 
-<section class="container">
-  <header class="header">
-    <img id="img-logo" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/848384e8253752a1dc03b823c337505f21228e46c1847bd76567f72946482aac?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" alt="Logo" class="logo" />
-    <nav class="nav-menu">
-      <a href="index.html" class="nav-item nav-item-home">Home</a>
-      <a href="myTicket.html" class="nav-item">My Tickets</a>
-      <a href="News.html" class="nav-item">Too News</a>
-      <div class="vertical-divider"></div>
-      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a3ca842d4cd4de61297eebe8f08acb763755b34885f1a9221275a7018273ae5?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" alt="Profile Picture" class="profile-image" />
-      <span class="profile-name">Hoang Phuc</span>
-      <button class="logout-btn" tabindex="0">Logout</button>
-    </nav>
-  </header>
- 
-    <div class="content-wrapper">
-        <h1 class="schedule-title">SELECT SEAT</h1>
-        <p class="schedule-description">Choose the seat you will occupy during the film screening</p>
-        <br>
-        <br>
-        <section class="containerTime">
-            <div class="time-status">
-              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb2f5fce14a2021e1aec0e0135ea72f730d3bf722aa2ac8363d3983e7367c9bf?apiKey=b6c35e937f8c41d09a0fcca0f11babf1&" class="icon" alt="" />
-              <div class="time-icon-wrapper">
-                <time class="time-text">14:40</time>
-                
-              </div>
-            </div>
-            <aside class="seat-status">
-              <div class="filled-status">
-                <div class="filled-icon"></div>
-                <p class="filled-text">Filled</p>
-              </div>
-              <div class="empty-status">
-                <div class="empty-icon"></div>
-                <p class="empty-text">Empty Chair</p>
-              </div>
-              <div class="chosen-status">
-                <div class="chosen-icon"></div>
-                <p class="chosen-text">Chosen</p>
-              </div>
-            </aside>
-          </section>
+					var sc = $('#seat-map').seatCharts({
+						map: [ //Seating chart
+							'aaaaaaaaaa',
+							'aaaaaaaaaa',
+							'__________',
+							'aaaaaaaa__',
+							'aaaaaaaaaa',
+							'aaaaaaaaaa',
+							'aaaaaaaaaa',
+							'aaaaaaaaaa',
+							'aaaaaaaaaa',
+							'__aaaaaa__'
+						],
+						naming: {
+							top: false,
+							getLabel: function (character, row, column) {
+								return column;
+							}
+						},
+						legend: { //Definition legend
+							node: $('#legend'),
+							items: [
+								['a', 'available', 'Available'],
+								['a', 'unavailable', 'Sold'],
+								['a', 'selected', 'Selected']
+							]
+						},
+						click: function () { //Click event
+							if (this.status() == 'available') { //optional seat
+								$('<li>R-' + (this.settings.row + 1) + '	S-' + this.settings.label + '</li>')
+									.attr('id', 'cart-item-' + this.settings.id)
+									.data('seatId', this.settings.id)
+									.appendTo($cart);
 
+								$counter.text(sc.find('selected').length + 1);
+								$total.text(recalculateTotal(sc) + price);
 
+								return 'selected';
+							} else if (this.status() == 'selected') { //Checked
+								//Update Number
+								$counter.text(sc.find('selected').length - 1);
+								//update totalnum
+								$total.text(recalculateTotal(sc) - price);
 
-        <div class="containerSeats">
-            <div class="screen"></div>
-            <div class="row">
-                <div class="seat" data-row="A" data-seat="1" data-price="50"><span>A1</span></div>
-                <div class="seat" data-row="A" data-seat="2" data-price="50"><span>A2</span></div>
-                <div class="seat" data-row="A" data-seat="3" data-price="50"><span>A3</span></div>
-                <div class="seat" data-row="A" data-seat="4" data-price="50"><span>A4</span></div>
-                <div class="seat" data-row="A" data-seat="5" data-price="50"><span>A5</span></div>
-                <div class="seat" data-row="A" data-seat="6" data-price="50"><span>A6</span></div>
-                <div class="seat" data-row="A" data-seat="7" data-price="50"><span>A7</span></div>
-                <div class="seat" data-row="A" data-seat="8" data-price="50"><span>A8</span></div>
-                <div class="seat" data-row="A" data-seat="9" data-price="50"><span>A9</span></div>
-                <div class="seat" data-row="A" data-seat="10" data-price="50"><span>A10</span></div>
-                <div class="seat" data-row="A" data-seat="11" data-price="50"><span>A11</span></div>
-                <div class="seat" data-row="A" data-seat="12" data-price="50"><span>A12</span></div>
-                <div class="seat" data-row="A" data-seat="13" data-price="50"><span>A13</span></div>
-                <div class="seat" data-row="A" data-seat="14" data-price="50"><span>A14</span></div>
-                <div class="seat" data-row="A" data-seat="15" data-price="50"><span>A15</span></div>
-                <div class="seat" data-row="A" data-seat="16" data-price="50"><span>A16</span></div>
-                <div class="seat" data-row="A" data-seat="17" data-price="50"><span>A17</span></div>
-                <div class="seat" data-row="A" data-seat="18" data-price="50"><span>A18</span></div>
-                <div class="seat" data-row="A" data-seat="19" data-price="50"><span>A19</span></div>
-                <div class="seat" data-row="A" data-seat="20" data-price="50"><span>A20</span></div>
-                <div class="seat" data-row="A" data-seat="21" data-price="50"><span>A21</span></div>
-                <div class="seat" data-row="A" data-seat="22" data-price="50"><span>A22</span></div>
-                <div class="seat" data-row="A" data-seat="23" data-price="50"><span>A23</span></div>
-                <div class="seat" data-row="A" data-seat="24" data-price="50"><span>A24</span></div>
-                <div class="seat" data-row="A" data-seat="25" data-price="50"><span>A25</span></div>
-                <div class="seat" data-row="A" data-seat="26" data-price="50"><span>A26</span></div>
-                <div class="seat" data-row="A" data-seat="27" data-price="50"><span>A27</span></div>
-                <div class="seat" data-row="A" data-seat="28" data-price="50"><span>A28</span></div>
-                <div class="seat" data-row="A" data-seat="29" data-price="50"><span>A29</span></div>
-                <div class="seat" data-row="A" data-seat="30" data-price="50"><span>A30</span></div>
-                <div class="seat" data-row="A" data-seat="31" data-price="50"><span>A31</span></div>
-                <div class="seat" data-row="A" data-seat="32" data-price="50"><span>A32</span></div>
-                
- 
+								//Delete reservation
+								$('#cart-item-' + this.settings.id).remove();
+								//optional
+								return 'available';
+							} else if (this.status() == 'unavailable') { //sold
+								return 'unavailable';
+							} else {
+								return this.style();
+							}
+						}
+					});
+					//sold seat
+					sc.get(['1_2', '4_4', '4_5', '6_6', '6_7', '8_5', '8_6', '8_7', '8_8', '10_1', '10_2']).status(
+						'unavailable');
 
+				});
+				//sum total money
+				function recalculateTotal(sc) {
+					var total = 0;
+					sc.find('selected').each(function () {
+						total += price;
+					});
 
-            </div>
-            <div class="row">
-                <div class="seat" data-row="B" data-seat="1" data-price="50"><span>B1</span></div>
-                <div class="seat" data-row="B" data-seat="2" data-price="50"><span>B2</span></div>
-                <div class="seat" data-row="B" data-seat="3" data-price="50"><span>B3</span></div>
-                <div class="seat" data-row="B" data-seat="4" data-price="50"><span>B4</span></div>
-                <div class="seat" data-row="B" data-seat="5" data-price="50"><span>B5</span></div>
-                <div class="seat" data-row="B" data-seat="6" data-price="50"><span>B6</span></div>
-                <div class="seat" data-row="B" data-seat="7" data-price="50"><span>B7</span></div>
-                <div class="seat" data-row="B" data-seat="8" data-price="50"><span>B8</span></div>
-                <div class="seat" data-row="B" data-seat="9" data-price="50"><span>B9</span></div>
-                <div class="seat" data-row="B" data-seat="10" data-price="50"><span>B10</span></div>
-                <div class="seat" data-row="B" data-seat="11" data-price="50"><span>B11</span></div>
-                <div class="seat" data-row="B" data-seat="12" data-price="50"><span>B12</span></div>
-                <div class="seat" data-row="B" data-seat="13" data-price="50"><span>B13</span></div>
-                <div class="seat" data-row="B" data-seat="14" data-price="50"><span>B14</span></div>
-                <div class="seat" data-row="B" data-seat="15" data-price="50"><span>B15</span></div>
-                <div class="seat" data-row="B" data-seat="16" data-price="50"><span>B16</span></div>
-                <div class="seat" data-row="B" data-seat="17" data-price="50"><span>B17</span></div>
-                <div class="seat" data-row="B" data-seat="18" data-price="50"><span>B18</span></div>
-                <div class="seat" data-row="B" data-seat="19" data-price="50"><span>B19</span></div>
-                <div class="seat" data-row="B" data-seat="20" data-price="50"><span>B20</span></div>
-                <div class="seat" data-row="B" data-seat="21" data-price="50"><span>B21</span></div>
-                <div class="seat" data-row="B" data-seat="22" data-price="50"><span>B22</span></div>
-                <div class="seat" data-row="B" data-seat="23" data-price="50"><span>B23</span></div>
-                <div class="seat" data-row="B" data-seat="24" data-price="50"><span>B24</span></div>
-                <div class="seat" data-row="B" data-seat="25" data-price="50"><span>B25</span></div>
-                <div class="seat" data-row="B" data-seat="26" data-price="50"><span>B26</span></div>
-                <div class="seat" data-row="B" data-seat="27" data-price="50"><span>B27</span></div>
-                <div class="seat" data-row="B" data-seat="28" data-price="50"><span>B28</span></div>
-                <div class="seat" data-row="B" data-seat="29" data-price="50"><span>B29</span></div>
-                <div class="seat" data-row="B" data-seat="30" data-price="50"><span>B30</span></div>
-                <div class="seat" data-row="B" data-seat="31" data-price="50"><span>B31</span></div>
-                <div class="seat" data-row="B" data-seat="32" data-price="50"><span>B32</span></div>
-                
-
-            </div>
-            <div class="row">
-                <div class="seat" data-row="C" data-seat="1" data-price="50"><span>C1</span></div>
-                <div class="seat" data-row="C" data-seat="2" data-price="50"><span>C2</span></div>
-                <div class="seat" data-row="C" data-seat="3" data-price="50"><span>C3</span></div>
-                <div class="seat" data-row="C" data-seat="4" data-price="50"><span>C4</span></div>
-                <div class="seat" data-row="C" data-seat="5" data-price="50"><span>C5</span></div>
-                <div class="seat" data-row="C" data-seat="6" data-price="50"><span>C6</span></div>
-                <div class="seat" data-row="C" data-seat="7" data-price="50"><span>C7</span></div>
-                <div class="seat" data-row="C" data-seat="8" data-price="50"><span>C8</span></div>
-                <div class="seat" data-row="C" data-seat="9" data-price="50"><span>C9</span></div>
-                <div class="seat" data-row="C" data-seat="10" data-price="50"><span>C10</span></div>
-                <div class="seat" data-row="C" data-seat="11" data-price="50"><span>C11</span></div>
-                <div class="seat" data-row="C" data-seat="12" data-price="50"><span>C12</span></div>
-                <div class="seat" data-row="C" data-seat="13" data-price="50"><span>C13</span></div>
-                <div class="seat" data-row="C" data-seat="14" data-price="50"><span>C14</span></div>
-                <div class="seat" data-row="C" data-seat="15" data-price="50"><span>C15</span></div>
-                <div class="seat" data-row="C" data-seat="16" data-price="50"><span>C16</span></div>
-                <div class="seat" data-row="C" data-seat="17" data-price="50"><span>C17</span></div>
-                <div class="seat" data-row="C" data-seat="18" data-price="50"><span>C18</span></div>
-                <div class="seat" data-row="C" data-seat="19" data-price="50"><span>C19</span></div>
-                <div class="seat" data-row="C" data-seat="20" data-price="50"><span>C20</span></div>
-                <div class="seat" data-row="C" data-seat="21" data-price="50"><span>C21</span></div>
-                <div class="seat" data-row="C" data-seat="22" data-price="50"><span>C22</span></div>
-                <div class="seat" data-row="C" data-seat="23" data-price="50"><span>C23</span></div>
-                <div class="seat" data-row="C" data-seat="24" data-price="50"><span>C24</span></div>
-                <div class="seat" data-row="C" data-seat="25" data-price="50"><span>C25</span></div>
-                <div class="seat" data-row="C" data-seat="26" data-price="50"><span>C26</span></div>
-                <div class="seat" data-row="C" data-seat="27" data-price="50"><span>C27</span></div>
-                <div class="seat" data-row="C" data-seat="28" data-price="50"><span>C28</span></div>
-                <div class="seat" data-row="C" data-seat="29" data-price="50"><span>C29</span></div>
-                <div class="seat" data-row="C" data-seat="30" data-price="50"><span>C30</span></div>
-                <div class="seat" data-row="C" data-seat="31" data-price="50"><span>C31</span></div>
-                <div class="seat" data-row="C" data-seat="32" data-price="50"><span>C32</span></div>
-                
-
-            </div>
-            <div class="row">
-                <div class="seat" data-row="D" data-seat="1" data-price="50"><span>D1</span></div>
-                <div class="seat" data-row="D" data-seat="2" data-price="50"><span>D2</span></div>
-                <div class="seat" data-row="D" data-seat="3" data-price="50"><span>D3</span></div>
-                <div class="seat" data-row="D" data-seat="4" data-price="50"><span>D4</span></div>
-                <div class="seat" data-row="D" data-seat="5" data-price="50"><span>D5</span></div>
-                <div class="seat" data-row="D" data-seat="6" data-price="50"><span>D6</span></div>
-                <div class="seat" data-row="D" data-seat="7" data-price="50"><span>D7</span></div>
-                <div class="seat" data-row="D" data-seat="8" data-price="50"><span>D8</span></div>
-                <div class="seat" data-row="D" data-seat="9" data-price="50"><span>D9</span></div>
-                <div class="seat" data-row="D" data-seat="10" data-price="50"><span>D10</span></div>
-                <div class="seat" data-row="D" data-seat="11" data-price="50"><span>D11</span></div>
-                <div class="seat" data-row="D" data-seat="12" data-price="50"><span>D12</span></div>
-                <div class="seat" data-row="D" data-seat="13" data-price="50"><span>D13</span></div>
-                <div class="seat" data-row="D" data-seat="14" data-price="50"><span>D14</span></div>
-                <div class="seat" data-row="D" data-seat="15" data-price="50"><span>D15</span></div>
-                <div class="seat" data-row="D" data-seat="16" data-price="50"><span>D16</span></div>
-                <div class="seat" data-row="D" data-seat="17" data-price="50"><span>D17</span></div>
-                <div class="seat" data-row="D" data-seat="18" data-price="50"><span>D18</span></div>
-                <div class="seat" data-row="D" data-seat="19" data-price="50"><span>D19</span></div>
-                <div class="seat" data-row="D" data-seat="20" data-price="50"><span>D20</span></div>
-                <div class="seat" data-row="D" data-seat="21" data-price="50"><span>D21</span></div>
-                <div class="seat" data-row="D" data-seat="22" data-price="50"><span>D22</span></div>
-                <div class="seat" data-row="D" data-seat="23" data-price="50"><span>D23</span></div>
-                <div class="seat" data-row="D" data-seat="24" data-price="50"><span>D24</span></div>
-                <div class="seat" data-row="D" data-seat="25" data-price="50"><span>D25</span></div>
-                <div class="seat" data-row="D" data-seat="26" data-price="50"><span>D26</span></div>
-                <div class="seat" data-row="D" data-seat="27" data-price="50"><span>D27</span></div>
-                <div class="seat" data-row="D" data-seat="28" data-price="50"><span>D28</span></div>
-                <div class="seat" data-row="D" data-seat="29" data-price="50"><span>D29</span></div>
-                <div class="seat" data-row="D" data-seat="30" data-price="50"><span>D30</span></div>
-                <div class="seat" data-row="D" data-seat="31" data-price="50"><span>D31</span></div>
-                <div class="seat" data-row="D" data-seat="32" data-price="50"><span>D32</span></div>
-
-            </div>
-            <div class="row">
-                <div class="seat" data-row="E" data-seat="1" data-price="50"><span>E1</span></div>
-                <div class="seat" data-row="E" data-seat="2" data-price="50"><span>E2</span></div>
-                <div class="seat" data-row="E" data-seat="3" data-price="50"><span>E3</span></div>
-                <div class="seat" data-row="E" data-seat="4" data-price="50"><span>E4</span></div>
-                <div class="seat" data-row="E" data-seat="5" data-price="50"><span>E5</span></div>
-                <div class="seat" data-row="E" data-seat="6" data-price="50"><span>E6</span></div>
-                <div class="seat" data-row="E" data-seat="7" data-price="50"><span>E7</span></div>
-                <div class="seat" data-row="E" data-seat="8" data-price="50"><span>E8</span></div>
-                <div class="seat" data-row="E" data-seat="9" data-price="50"><span>E9</span></div>
-                <div class="seat" data-row="E" data-seat="10" data-price="50"><span>E10</span></div>
-                <div class="seat" data-row="E" data-seat="11" data-price="50"><span>E11</span></div>
-                <div class="seat" data-row="E" data-seat="12" data-price="50"><span>E12</span></div>
-                <div class="seat" data-row="E" data-seat="13" data-price="50"><span>E13</span></div>
-                <div class="seat" data-row="E" data-seat="14" data-price="50"><span>E14</span></div>
-                <div class="seat" data-row="E" data-seat="15" data-price="50"><span>E15</span></div>
-                <div class="seat" data-row="E" data-seat="16" data-price="50"><span>E16</span></div>
-                <div class="seat" data-row="E" data-seat="17" data-price="50"><span>E17</span></div>
-                <div class="seat" data-row="E" data-seat="18" data-price="50"><span>E18</span></div>
-                <div class="seat" data-row="E" data-seat="19" data-price="50"><span>E19</span></div>
-                <div class="seat" data-row="E" data-seat="20" data-price="50"><span>E20</span></div>
-                <div class="seat" data-row="E" data-seat="21" data-price="50"><span>E21</span></div>
-                <div class="seat" data-row="E" data-seat="22" data-price="50"><span>E22</span></div>
-                <div class="seat" data-row="E" data-seat="23" data-price="50"><span>E23</span></div>
-                <div class="seat" data-row="E" data-seat="24" data-price="50"><span>E24</span></div>
-                <div class="seat" data-row="E" data-seat="25" data-price="50"><span>E25</span></div>
-                <div class="seat" data-row="E" data-seat="26" data-price="50"><span>E26</span></div>
-                <div class="seat" data-row="E" data-seat="27" data-price="50"><span>E27</span></div>
-                <div class="seat" data-row="E" data-seat="28" data-price="50"><span>E28</span></div>
-                <div class="seat" data-row="E" data-seat="29" data-price="50"><span>E29</span></div>
-                <div class="seat" data-row="E" data-seat="30" data-price="50"><span>E30</span></div>
-                <div class="seat" data-row="E" data-seat="31" data-price="50"><span>E31</span></div>
-                <div class="seat" data-row="E" data-seat="32" data-price="50"><span>E32</span></div>
-                
-            </div>
-            <div class="row">
-                <div class="seat" data-row="F" data-seat="1" data-price="50"><span>F1</span></div>
-                <div class="seat" data-row="F" data-seat="2" data-price="50"><span>F2</span></div>
-                <div class="seat" data-row="F" data-seat="3" data-price="50"><span>F3</span></div>
-                <div class="seat" data-row="F" data-seat="4" data-price="50"><span>F4</span></div>
-                <div class="seat" data-row="F" data-seat="5" data-price="50"><span>F5</span></div>
-                <div class="seat" data-row="F" data-seat="6" data-price="50"><span>F6</span></div>
-                <div class="seat" data-row="F" data-seat="7" data-price="50"><span>F7</span></div>
-                <div class="seat" data-row="F" data-seat="8" data-price="50"><span>F8</span></div>
-                <div class="seat" data-row="F" data-seat="9" data-price="50"><span>F9</span></div>
-                <div class="seat" data-row="F" data-seat="10" data-price="50"><span>F10</span></div>
-                <div class="seat" data-row="F" data-seat="11" data-price="50"><span>F11</span></div>
-                <div class="seat" data-row="F" data-seat="12" data-price="50"><span>F12</span></div>
-                <div class="seat" data-row="F" data-seat="13" data-price="50"><span>F13</span></div>
-                <div class="seat" data-row="F" data-seat="14" data-price="50"><span>F14</span></div>
-                <div class="seat" data-row="F" data-seat="15" data-price="50"><span>F15</span></div>
-                <div class="seat" data-row="F" data-seat="16" data-price="50"><span>F16</span></div>
-                <div class="seat" data-row="F" data-seat="17" data-price="50"><span>F17</span></div>
-                <div class="seat" data-row="F" data-seat="18" data-price="50"><span>F18</span></div>
-                <div class="seat" data-row="F" data-seat="19" data-price="50"><span>F19</span></div>
-                <div class="seat" data-row="F" data-seat="20" data-price="50"><span>F20</span></div>
-                <div class="seat" data-row="F" data-seat="21" data-price="50"><span>F21</span></div>
-                <div class="seat" data-row="F" data-seat="22" data-price="50"><span>F22</span></div>
-                <div class="seat" data-row="F" data-seat="23" data-price="50"><span>F23</span></div>
-                <div class="seat" data-row="F" data-seat="24" data-price="50"><span>F24</span></div>
-                <div class="seat" data-row="F" data-seat="25" data-price="50"><span>F25</span></div>
-                <div class="seat" data-row="F" data-seat="26" data-price="50"><span>F26</span></div>
-                <div class="seat" data-row="F" data-seat="27" data-price="50"><span>F27</span></div>
-                <div class="seat" data-row="F" data-seat="28" data-price="50"><span>F28</span></div>
-                <div class="seat" data-row="F" data-seat="29" data-price="50"><span>F29</span></div>
-                <div class="seat" data-row="F" data-seat="30" data-price="50"><span>F30</span></div>
-                <div class="seat" data-row="F" data-seat="31" data-price="50"><span>F31</span></div>
-                <div class="seat" data-row="F" data-seat="32" data-price="50"><span>F32</span></div>
-                
-
-            </div>
-
-        </div>
-        <br>
-        <br>
-        <div id="screenHere"><h1 >SCREEN HERE</h1></div>
-        <br>
-<!--         
-        <div id="selected-seats-container">
-            Selected Seats: <span id="selected-seats"></span>
-        </div>
-        <div id="total-price"></div> -->
-        <section class="total-container">
-            <div class="price-container">
-                <div class="price-title">Total</div>
-                <div id="total-price" class="price-value"></div>
-            </div>
-            <div class="seat-container">
-                <div class="seat-title">Seat</div>
-                <div id="selected-seats" class="seat-details"></div>
-            </div>
-            <div class="action-buttons">
-                <button class="return-button">RETURN</button>
-                <button class="purchase-button">PURCHASE</button>
-            </div>
-        </section>
- 
-        
-        
-    </div>
-    <footer class="info-footer">
-        <div class="divider"></div>
-        <div class="footer-content">
-          <div class="footer-column">
-            <div class="footer-items">
-              <div class="footer-item">
-                <div class="footer-info">
-                  <h2 class="footer-title">Company</h2>
-                  <div class="footer-list">
-                    <p class="list-item">Contact us</p>
-                    <p class="list-item">About</p>
-                    <p class="list-item">Partner</p>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="footer-item">
-                <div class="footer-info">
-                  <h2 class="footer-title">About</h2>
-                  <div class="footer-list">
-                    <p class="list-item">Too News</p>
-                    <p class="list-item">Cinema</p>
-                    <p class="list-item">My Ticket</p>
-                    <p class="list-item">Payment</p>
-                    <p class="list-item">Instalment</p>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="footer-item">
-                <div class="footer-info">
-                  <h2 class="footer-title">Support</h2>
-                  <div class="footer-list">
-                    <p class="list-item">Help Center</p>
-                    <p class="list-item">Privacy Policy</p>
-                    <p class="list-item">FAQ</p>
-                    <p class="list-item">Terms and Conditions</p>
-                    <p class="list-item">Update Covid-19</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-column">
-            <section class="social-section">
-              <div class="social-content">
-                <h2 class="social-title">Follow Social Media</h2>
-                <div class="social-icons">
-                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b8fa93cc29d50df9760b627d48135a7dbadd49b8b1e585d1e8eed284fa0e1cc?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e8620ff9de9fbf7819b69526474a6f1f65380ea433d6b886495490641c02d04a?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/24a966dd74f3fe546af8ace34e38507b34e6a2648b933814d50a9cd72800ffb4?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="social-icon" />
-                </div>
-              </div>
-              <div class="app-section">
-                <div class="social-content">
-                  <h2 class="app-title">Download Too Application</h2>
-                  <div class="app-links">
-                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8708d9c51565c9f862ab41f4083d6f99d94dad78cf9f5e81f4c79f75610dbb0c?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="app-link" />
-                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2b5dbedf9db16aee77498efe1dd3b9cb5c1b57435369cf45520ed4d75e82b82?apiKey=9336989e93ce4e61a0c12b7e20eabeb0&" class="app-link" />
-                  </div>
-                  <p class="footer-note">2024 Too - PT Hoang Phuc and Van Kiet.</p>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </footer>
-</section>
-<script>
-  const seats = document.querySelectorAll('.row .seat:not(.occupied)');
-const selectedSeatsDisplay = document.getElementById('selected-seats');
-const totalPriceDisplay = document.getElementById('total-price');
-
-seats.forEach(seat => {
-    seat.addEventListener('click', () => {
-        seat.classList.toggle('selected');
-        updateSelectedSeats();
-    });
-});
-
-function updateSelectedSeats() {
-    const selectedSeats = document.querySelectorAll('.row .seat.selected');
-    const seatValues = [...selectedSeats].map(seat => {
-        const row = seat.getAttribute('data-row');
-        const seatNumber = seat.getAttribute('data-seat');
-        const price = seat.getAttribute('data-price');
-        return `${row}${seatNumber}`;
-    });
-
-    const totalPrice = [...selectedSeats].reduce((total, seat) => {
-        return total + parseFloat(seat.getAttribute('data-price'));
-    }, 0);
-
-    selectedSeatsDisplay.innerHTML = seatValues.join(', ');
-    totalPriceDisplay.innerHTML = `Total Price: ${totalPrice}.000 VND`;
-}
-
-
-
-</script>
+					return total;
+				}
+			</script>
+		</div>
+	</div>
+	<script type="text/javascript" src="theme-change-seat-sel.js"></script>
+	<script src="jquery.nicescroll.js"></script>
+	<script src="scripts.js"></script>
 </body>
+
 </html>
