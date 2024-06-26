@@ -1,0 +1,98 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Đưa toàn bộ nội dung mô hình vào đây
+model Movie {
+  id         Int      @id @default(autoincrement())
+  title      String
+  genre      String
+  director   String
+  cast       String
+  duration   Int
+  releaseDate DateTime
+  language   String
+  rating     String
+  synopsis   String
+  showtimes  Showtime[]
+}
+
+model Theater {
+  id             Int      @id @default(autoincrement())
+  name           String
+  location       String
+  numberOfScreens Int
+  screens        Screen[]
+}
+
+model Screen {
+  id          Int      @id @default(autoincrement())
+  theaterId   Int
+  screenNumber Int
+  capacity    Int
+  type        String
+  theater     Theater  @relation(fields: [theaterId], references: [id])
+  seats       Seat[]
+  showtimes   Showtime[]
+}
+
+model Seat {
+  id        Int      @id @default(autoincrement())
+  screenId  Int
+  seatNumber Int
+  rowNumber Int
+  class     String
+  screen    Screen  @relation(fields: [screenId], references: [id])
+  tickets   Ticket[]
+}
+
+model Showtime {
+  id        Int      @id @default(autoincrement())
+  movieId   Int
+  screenId  Int
+  startTime DateTime
+  endTime   DateTime
+  movie     Movie    @relation(fields: [movieId], references: [id])
+  screen    Screen   @relation(fields: [screenId], references: [id])
+  tickets   Ticket[]
+}
+
+model Customer {
+  id        Int      @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String   @unique
+  phone     String
+  address   String
+  tickets   Ticket[]
+  transactions Transaction[]
+}
+
+model Ticket {
+  id           Int      @id @default(autoincrement())
+  customerId   Int
+  showtimeId   Int
+  seatId       Int
+  price        Float
+  purchaseDateTime DateTime
+  customer     Customer @relation(fields: [customerId], references: [id])
+  showtime     Showtime @relation(fields: [showtimeId], references: [id])
+  seat         Seat     @relation(fields: [seatId], references: [id])
+  transactions Transaction[]
+}
+
+model Transaction {
+  id             Int      @id @default(autoincrement())
+  customerId     Int
+  ticketId       Int
+  paymentMethod  String
+  transactionDateTime DateTime
+  amount         Float
+  customer       Customer @relation(fields: [customerId], references: [id])
+  ticket         Ticket   @relation(fields: [ticketId], references: [id])
+}
