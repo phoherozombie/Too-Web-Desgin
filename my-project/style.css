@@ -2851,11 +2851,12 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #28a745;
   border-color: #28a745;
+  width: 200px;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #218838;
+  background-color: #e8821b;
   border-color: #1e7e34;
 }
 
@@ -6261,6 +6262,7 @@ a.close.disabled {
   height: 100%;
   overflow: hidden;
   outline: 0;
+ 
 }
 
 .modal-dialog {
@@ -6268,6 +6270,7 @@ a.close.disabled {
   width: auto;
   margin: 0.5rem;
   pointer-events: none;
+  right: 200px;
 }
 
 .modal.fade .modal-dialog {
@@ -6338,7 +6341,7 @@ a.close.disabled {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 900px;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
