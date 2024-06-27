@@ -2851,11 +2851,12 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #28a745;
   border-color: #28a745;
+  width: 200px;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #218838;
+  background-color: #d10e0e;
   border-color: #1e7e34;
 }
 
@@ -6338,13 +6339,16 @@ a.close.disabled {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+
+  width: 1200px;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
+  right: 60%;
+
 }
 
 .modal-backdrop {
@@ -6389,6 +6393,7 @@ a.close.disabled {
   position: relative;
   flex: 1 1 auto;
   padding: 1rem;
+
 }
 
 .modal-footer {
@@ -19603,6 +19608,7 @@ button.closebtn {
 
 .bookbtn {
   margin-bottom: 15px;
+  
 }
 
 /* modal end */
