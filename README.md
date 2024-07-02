@@ -3,6 +3,7 @@
 ## Overview
 Welcome to the **Movie Ticket Booking**. Website sells movie tickets online, allowing users to log in, view showtimes, choose seats, and pay for movie tickets.
 It is a movie ticket booking website with front-end and back-end and It is available in both dark & light mode.
+**Demo Video**: https://youtu.be/RUieE3he3aQ
 
 ## Technologies
 This project is built with robust and modern technologies to ensure high performance and scalability:
