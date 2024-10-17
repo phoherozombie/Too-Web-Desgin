@@ -1,5 +1,14 @@
-var hello = (name,meesage) => {
-    console.log("Chao " + name + ', ban that ' + meesage);
-
-}
-hello('Tuyen',"xau trai hihi")
+class MyClass {
+    a = 1; 
+    #b = 2;
+    static #c = 3;
+  
+    incB(){
+      this.#b++;
+      console.log(this.#b)
+  
+    }
+  
+  }
+  const m = new MyClass();
+  m.incB()

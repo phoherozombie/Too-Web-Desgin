@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="inputWidth">Width:</label>
+        <input id="inputWidth" placeholder="width" type="number">
+        <label for="inputLength">Length:</label>
+        <input id="inputLength" type="number" placeholder="length">
+        <button id="submitBtn" type="button">OK</button>
+    </form>
+    <p id="area">Area result: </p>
+    <p id="permimeter">Perimeter result: </p>
+
+    <script>
+        function caculate() {
+            const width = parseFloat(document.getElementById("inputWidth").value);
+            const length = parseFloat(document.getElementById("inputLength").value);
+
+
+            const caculatePermimeter = (width, length) => (width + length) * 2;
+            const caculateArea = (width, length) => width * length;
+
+            document.getElementById("area").innerHTML = "Area result: " + caculateArea(width, length);
+            document.getElementById("permimeter").innerHTML = "Perimeter result: " + caculatePermimeter(width, length);
+        }
+
+        document.getElementById("submitBtn").addEventListener("click", function(event) {
+            event.preventDefault();
+            caculate();
+        });
+    </script>
+</body>
+</html>
