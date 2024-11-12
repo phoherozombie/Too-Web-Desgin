@@ -1,52 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Table</title>
+    <title>Hotel Management</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            color: #34495e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #00796b;
+            text-shadow: 2px 2px #b2ebf2;
+        }
+        .form-control {
+            border-radius: 20px;
+            border: 1px solid #00796b;
+        }
+        .btn-primary, .btn-success, .btn-warning {
+            border-radius: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+        .btn-primary {
+            background-color: #00796b;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #004d40;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            text-align: center;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            color: #00796b;
+            font-weight: bold;
+        }
+        .card-text {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        #searchInput {
+            background: #e8f5e9;
+        }
+        #addHotelForm, #editHotelForm {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-
 <body>
     <div class="container">
-        <h1>Hotel Table</h1>
+        <h1 class="text-center mb-4">Hotel Management</h1>
+
+        <!-- Search bar -->
+        <input type="text" id="searchInput" placeholder="Search hotels..." class="form-control mb-3" oninput="searchHotels()">
+
         <!-- Button to show the Add form -->
-        <button class="btn btn-primary" onclick="showAddForm()">Add Hotel</button>
+        <button class="btn btn-primary mb-3 w-100" onclick="showAddForm()">Add New Hotel</button>
 
         <!-- Add Hotel Form -->
         <div id="addHotelForm" style="display:none; margin-top:20px;">
-            <h2>Add Hotel</h2>
-            <input type="text" id="addHotelName" placeholder="Hotel Name" class="form-control" />
-            <input type="number" id="addHotelPrice" placeholder="Hotel Price" class="form-control" style="margin-top:10px;" />
-            <button class="btn btn-success" style="margin-top:10px;" onclick="submitAddHotel()">Add</button>
+            <h2 class="text-center">Add Hotel</h2>
+            <input type="text" id="addHotelName" placeholder="Hotel Name" class="form-control mb-2" />
+            <input type="number" id="addHotelPrice" placeholder="Hotel Price" class="form-control mb-2" />
+            <input type="file" id="addHotelImage" class="form-control mb-2" />
+            <button class="btn btn-success w-100" onclick="submitAddHotel()">Add</button>
         </div>
 
         <!-- Edit Hotel Form -->
         <div id="editHotelForm" style="display:none; margin-top:20px;">
-            <h2>Edit Hotel</h2>
+            <h2 class="text-center">Edit Hotel</h2>
             <input type="hidden" id="editHotelId" />
-            <input type="text" id="editHotelName" placeholder="Hotel Name" class="form-control" />
-            <input type="number" id="editHotelPrice" placeholder="Hotel Price" class="form-control" style="margin-top:10px;" />
-            <button class="btn btn-warning" style="margin-top:10px;" onclick="submitEditHotel()">Update</button>
+            <input type="text" id="editHotelName" placeholder="Hotel Name" class="form-control mb-2" />
+            <input type="number" id="editHotelPrice" placeholder="Hotel Price" class="form-control mb-2" />
+            <input type="file" id="editHotelImage" class="form-control mb-2" />
+            <button class="btn btn-warning w-100" onclick="submitEditHotel()">Update</button>
         </div>
 
-        <!-- Hotel Table -->
-        <table class="table" border="1" style="margin-top:20px;">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="hotelTableBody">
-                <!-- Hotel data will be displayed here -->
-            </tbody>
-        </table>
+        <!-- Hotel Cards -->
+        <div id="hotelCards" class="row">
+            <!-- Hotel data will be displayed here in cards -->
+        </div>
     </div>
     <script src="./hotel.js"></script>
 </body>
-
 </html>

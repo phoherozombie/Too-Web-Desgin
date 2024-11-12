@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Out Form</title>
+  <style>
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 60%;
+      max-width: 800px;
+      position: relative;
+    }
+
+    .modal-header, .modal-footer {
+      padding: 10px;
+      background-color: #b86951;
+      color: white;
+    }
+    modal-footer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .close {
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+    }
+
+    button.availability-btn, button.proceed-btn, button.confirm-btn, button.submit-btn {
+      background-color: #b86951;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button.availability-btn:hover, button.proceed-btn:hover, button.confirm-btn:hover, button.submit-btn:hover {
+      background-color: #a55a47;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .services label {
+      display: inline-block;
+      margin: 5px 10px;
+      white-space: nowrap;
+    }
+
+    .service-details input[type="date"],
+    .service-details select {
+      margin: 5px 0;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Modal Trigger Button -->
+  <button id="openModal">Open Check Out Form</button>
+
+  <!-- Modal -->
+  <div id="availabilityModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Standard Room</h2>
+        <p>Room Info (3 Beds, 3 Beds, 6 Adults, 1 Children, Attached Bathroom)</p>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <button class="availability-btn">Check Room Availability</button>
+        <h3>Additional Services</h3>
+        <div class="services">
+          <label><input type="checkbox"> Car & ATV Rental (60$)</label>
+          <label><input type="checkbox"> Yacht Hiring (70$)</label>
+          <label><input type="checkbox"> Postal/Parcel Services (10$)</label>
+          <label><input type="checkbox"> Porter Service (80$)</label>
+          <label><input type="checkbox"> Horse Back Riding (100$)</label>
+        </div>
+        <div class="service-details">
+          <input type="date" placeholder="Service Date">
+          <input type="date" placeholder="End Date">
+          <select>
+            <option>Select Adults</option>
+          </select>
+          <select>
+            <option>Select Children</option>
+          </select>
+          <button class="proceed-btn">Proceed</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+
+        <button class="confirm-btn">Confirm and Book Room</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Modal Functionality -->
+  <script>
+    // Get modal and trigger elements
+    var modal = document.getElementById("availabilityModal");
+    var openModalBtn = document.getElementById("openModal");
+    var closeModalBtn = document.getElementsByClassName("close")[0];
+
+    // Open modal on button click
+    openModalBtn.onclick = function() {
+      modal.style.display = "block";
+    };
+
+    // Close modal on 'X' click
+    closeModalBtn.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    // Close modal when clicking outside of modal content
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Reservation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- Reservation Form -->
+  <section class="reservation py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Make A Reservation</h2>
+      <form id="reservationForm" class="row g-3 justify-content-center">
+        <div class="col-md-2">
+          <input
+            type="date"
+            class="form-control"
+            placeholder="Check-in"
+            name="checkin"
+            required
+          />
+        </div>
+        <div class="col-md-2">
+          <input
+            type="date"
+            class="form-control"
+            placeholder="Check-out"
+            name="checkout"
+            required
+          />
+        </div>
+        <div class="col-md-2">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Adults"
+            name="adults"
+            required
+          />
+        </div>
+        <div class="col-md-2">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Kids"
+            name="kids"
+            required
+          />
+        </div>
+        <div class="col-md-2">
+          <select class="form-select" name="room-type" required>
+            <option value="" disabled selected>Select Room Type</option>
+            <option>Family Room</option>
+            <option>Standard Room</option>
+            <option>Deluxe Room</option>
+            <option>Luxury Room</option>
+          </select>
+        </div>
+        <div class="col-md-2 text-center">
+          <button type="submit" class="btn btn-warning w-100">
+            Search Now
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modal for Displaying Room Cards -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutModalLabel">Available Rooms</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row" id="room-cards"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function fetchRooms() {
+      try {
+        const response = await fetch("https://6720c39598bbb4d93ca5df7a.mockapi.io/T_room");
+        const rooms = await response.json();
+        return rooms; // Return the rooms data
+      } catch (error) {
+        console.error("Error fetching rooms:", error);
+        return []; // Return an empty array on error
+      }
+    }
+  
+    function displayRooms(rooms) {
+      const roomCardsContainer = document.getElementById("room-cards");
+      roomCardsContainer.innerHTML = ""; // Clear previous results
+  
+      rooms.forEach((room) => {
+        const card = document.createElement("div");
+        card.className = "col-md-3 mb-4";
+        card.innerHTML = `
+          <div class="card h-100">
+            <img src="${room.room_image}" class="card-img-top" alt="${room.room_type}">
+            <div class="card-body">
+              <h5 class="card-title">${room.room_type}</h5>
+              <p class="card-text"><strong>Status:</strong> ${room.status}</p>
+              <p class="card-text"><strong>Price:</strong> ${room.price}</p>
+              <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                <strong>Description:</strong> ${room.content}
+              </p>
+              <div class="text-center">
+                <button class="btn btn-primary w-200">Book Now</button>
+                <button class="btn btn-primary w-200">View Detail</button>
+              </div>
+            </div>
+          </div>
+        `;
+        roomCardsContainer.appendChild(card);
+      });
+    }
+  
+    document.addEventListener("DOMContentLoaded", async () => {
+      const rooms = await fetchRooms(); // Fetch all rooms once on page load
+  
+      // Attach submit event listener to the reservation form
+      document.getElementById("reservationForm").addEventListener("submit", async (event) => {
+        event.preventDefault(); // Prevent form submission
+  
+        const formData = new FormData(event.target);
+        const selectedRoomType = formData.get('room-type');
+        
+        // Filter rooms based on the selected room type
+        const filteredRooms = rooms.filter(room => room.room_type === selectedRoomType);
+  
+        displayRooms(filteredRooms); // Display filtered rooms in the modal
+        $('#checkoutModal').modal('show'); // Show the modal
+      });
+    });
+  </script>
+  
+</body>
+</html>
